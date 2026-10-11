@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Софийский собор</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="frame-page sofia-page">
+
+  <!-- Десктопная версия -->
+  <main class="frame-container sofia-desktop">
+    <a href="../index.html#route" class="back-to-route">
+      ← НАЗАД К МАРШРУТУ
+    </a>
+
+    <img
+      class="frame-image"
+      src="../images/sofia.png"
+      alt="Софийский собор в Великом Новгороде"
+    >
+
+    <button class="audio-button" id="audioButton" type="button"
+      aria-label="Слушать аудио">
+      <img src="../images/knopka.png" alt="">
+    </button>
+  </main>
+
+  <!-- Мобильная версия -->
+  <main class="sofia-mobile">
+    <img
+      class="sofia-mobile-poster"
+      src="../images/sofia-mob.png"
+      alt="Софийский собор в Великом Новгороде"
+    >
+
+    <div class="sofia-mobile-controls">
+      <button
+        class="sofia-mobile-audio"
+        id="mobileSofiaAudioButton"
+        type="button"
+      >
+        <img src="../images/knopka.png" alt="">
+        <span id="mobileSofiaAudioLabel">СЛУШАТЬ АУДИО</span>
+      </button>
+
+      <a href="../index.html#route" class="sofia-mobile-back">
+        ← НАЗАД К МАРШРУТУ
+      </a>
+    </div>
+  </main>
+
+  <!-- Один аудиофайл для обеих версий -->
+  <audio id="placeAudio" preload="none">
+    <source src="../audio/sofia.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const placeAudio = document.getElementById("placeAudio");
+    const audioButton = document.getElementById("audioButton");
+    const mobileAudioButton =
+      document.getElementById("mobileSofiaAudioButton");
+    const mobileAudioLabel =
+      document.getElementById("mobileSofiaAudioLabel");
+
+    async function toggleAudio() {
+      if (placeAudio.paused) {
+        try {
+          await placeAudio.play();
+        } catch (error) {
+          console.error("Не удалось воспроизвести аудио:", error);
+        }
+      } else {
+        placeAudio.pause();
+      }
+    }
+
+    audioButton.addEventListener("click", toggleAudio);
+    mobileAudioButton.addEventListener("click", toggleAudio);
+
+    function updateAudioButtons() {
+      const playing = !placeAudio.paused;
+
+      audioButton.classList.toggle("is-playing", playing);
+      mobileAudioButton.classList.toggle("is-playing", playing);
+
+      mobileAudioLabel.textContent =
+        playing ? "ПАУЗА" : "СЛУШАТЬ АУДИО";
+    }
+
+    placeAudio.addEventListener("play", updateAudioButtons);
+    placeAudio.addEventListener("pause", updateAudioButtons);
+    placeAudio.addEventListener("ended", updateAudioButtons);
+  </script>
+
+</body>
+</html>

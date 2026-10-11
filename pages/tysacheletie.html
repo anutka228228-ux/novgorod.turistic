@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тысячелетие России</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="frame-page tysacheletie-page">
+
+  <!-- Десктопная версия -->
+  <main class="frame-container tysacheletie-desktop">
+    <a href="../index.html#route" class="back-to-route">
+      ← НАЗАД К МАРШРУТУ
+    </a>
+
+    <img
+      class="frame-image"
+      src="../images/tysacheletie.png"
+      alt="Памятник Тысячелетие России"
+    >
+
+    <button class="audio-button" id="audioButton" type="button"
+      aria-label="Слушать аудио">
+      <img src="../images/knopka.png" alt="">
+    </button>
+  </main>
+
+  <!-- Мобильная версия -->
+  <main class="tysacheletie-mobile">
+    <img
+      class="tysacheletie-mobile-poster"
+      src="../images/pamyatnik-mob.png"
+      alt="Памятник Тысячелетие России в Великом Новгороде"
+    >
+
+    <div class="tysacheletie-mobile-controls">
+      <button
+        class="tysacheletie-mobile-audio"
+        id="mobileAudioButton"
+        type="button"
+      >
+        <img src="../images/knopka.png" alt="">
+        <span id="mobileAudioLabel">СЛУШАТЬ АУДИО</span>
+      </button>
+
+      <a href="../index.html#route" class="tysacheletie-mobile-back">
+        ← НАЗАД К МАРШРУТУ
+      </a>
+    </div>
+  </main>
+
+  <!-- Аудио для обеих версий -->
+  <audio id="placeAudio" preload="none">
+    <source src="../audio/tysacheletie.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const placeAudio = document.getElementById("placeAudio");
+    const audioButton = document.getElementById("audioButton");
+    const mobileAudioButton =
+      document.getElementById("mobileAudioButton");
+    const mobileAudioLabel =
+      document.getElementById("mobileAudioLabel");
+
+    async function toggleAudio() {
+      if (placeAudio.paused) {
+        try {
+          await placeAudio.play();
+        } catch (error) {
+          console.error("Не удалось воспроизвести аудио:", error);
+        }
+      } else {
+        placeAudio.pause();
+      }
+    }
+
+    audioButton.addEventListener("click", toggleAudio);
+    mobileAudioButton.addEventListener("click", toggleAudio);
+
+    function updateAudioButtons() {
+      const playing = !placeAudio.paused;
+
+      audioButton.classList.toggle("is-playing", playing);
+      mobileAudioButton.classList.toggle("is-playing", playing);
+
+      mobileAudioLabel.textContent =
+        playing ? "ПАУЗА" : "СЛУШАТЬ АУДИО";
+    }
+
+    placeAudio.addEventListener("play", updateAudioButtons);
+    placeAudio.addEventListener("pause", updateAudioButtons);
+    placeAudio.addEventListener("ended", updateAudioButtons);
+  </script>
+
+</body>
+</html>

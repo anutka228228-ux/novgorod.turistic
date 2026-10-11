@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Новгородский кремль</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="frame-page kremlin-page">
+
+  <main class="frame-container">
+    <a href="../index.html#route" class="back-to-route">
+      ← НАЗАД К МАРШРУТУ
+    </a>
+
+    <img
+      class="frame-image"
+      src="../images/kremlin.png"
+      alt="Новгородский кремль"
+    >
+
+    <button
+      class="audio-button"
+      id="audioButton"
+      type="button"
+      aria-label="Слушать аудио"
+    >
+      <img src="../images/knopka.png" alt="">
+    </button>
+  </main>
+
+  <!-- Мобильная версия -->
+  <img
+    src="../images/kremlin-mob.png"
+    alt="Новгородский кремль"
+    class="mobile-place-poster"
+  >
+
+  <div class="kremlin-mobile-controls">
+    <button
+      class="kremlin-audio-button"
+      id="mobileKremlinAudioButton"
+      type="button"
+    >
+      <img src="../images/knopka.png" alt="">
+      <span id="mobileAudioLabel">СЛУШАТЬ АУДИО</span>
+    </button>
+
+    <a href="../index.html#route" class="kremlin-back-button">
+      ← НАЗАД К МАРШРУТУ
+    </a>
+  </div>
+
+  <!-- Один аудиоплеер для обеих кнопок -->
+  <audio id="placeAudio" preload="auto">
+    <source src="../audio/kremlin.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const audio = document.getElementById("placeAudio");
+      const desktopButton = document.getElementById("audioButton");
+      const mobileButton = document.getElementById("mobileKremlinAudioButton");
+      const mobileLabel = document.getElementById("mobileAudioLabel");
+
+      async function toggleAudio() {
+        if (audio.paused) {
+          try {
+            await audio.play();
+            mobileLabel.textContent = "ПАУЗА";
+          } catch (error) {
+            console.error("Ошибка воспроизведения:", error);
+            mobileLabel.textContent = "ОШИБКА АУДИО";
+          }
+        } else {
+          audio.pause();
+          mobileLabel.textContent = "СЛУШАТЬ АУДИО";
+        }
+      }
+
+      desktopButton?.addEventListener("click", toggleAudio);
+      mobileButton?.addEventListener("click", toggleAudio);
+
+      audio.addEventListener("ended", () => {
+        mobileLabel.textContent = "СЛУШАТЬ АУДИО";
+      });
+
+      audio.addEventListener("error", () => {
+        console.error("Не удалось загрузить ../audio/kremlin.mp3");
+      });
+    });
+  </script>
+
+</body>
+</html>

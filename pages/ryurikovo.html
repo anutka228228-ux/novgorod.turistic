@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Рюриково городище</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="frame-page ryurikovo-page">
+
+  <!-- Десктопная версия -->
+  <main class="frame-container ryurikovo-desktop">
+    <a href="../index.html#route" class="back-to-route">
+      ← НАЗАД К МАРШРУТУ
+    </a>
+
+    <img
+      class="frame-image"
+      src="../images/ryurikovo.png"
+      alt="Рюриково городище"
+    >
+
+    <button class="audio-button" id="audioButton" type="button"
+      aria-label="Слушать аудио">
+      <img src="../images/knopka.png" alt="">
+    </button>
+  </main>
+
+  <!-- Мобильная версия -->
+  <main class="ryurikovo-mobile">
+    <img
+      class="ryurikovo-mobile-poster"
+      src="../images/ryurikovo-mob.png"
+      alt="Рюриково городище в Великом Новгороде"
+    >
+
+    <div class="ryurikovo-mobile-controls">
+      <button
+        class="ryurikovo-mobile-audio"
+        id="mobileAudioButton"
+        type="button"
+      >
+        <img src="../images/knopka.png" alt="">
+        <span id="mobileAudioLabel">СЛУШАТЬ АУДИО</span>
+      </button>
+
+      <a href="../index.html#route" class="ryurikovo-mobile-back">
+        ← НАЗАД К МАРШРУТУ
+      </a>
+    </div>
+  </main>
+
+  <!-- Общий аудиофайл -->
+  <audio id="placeAudio" preload="none">
+    <source src="../audio/ryurikovo.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const placeAudio = document.getElementById("placeAudio");
+    const audioButton = document.getElementById("audioButton");
+    const mobileAudioButton =
+      document.getElementById("mobileAudioButton");
+    const mobileAudioLabel =
+      document.getElementById("mobileAudioLabel");
+
+    async function toggleAudio() {
+      if (placeAudio.paused) {
+        try {
+          await placeAudio.play();
+        } catch (error) {
+          console.error("Не удалось воспроизвести аудио:", error);
+        }
+      } else {
+        placeAudio.pause();
+      }
+    }
+
+    audioButton.addEventListener("click", toggleAudio);
+    mobileAudioButton.addEventListener("click", toggleAudio);
+
+    function updateAudioButtons() {
+      const playing = !placeAudio.paused;
+
+      audioButton.classList.toggle("is-playing", playing);
+      mobileAudioButton.classList.toggle("is-playing", playing);
+
+      mobileAudioLabel.textContent =
+        playing ? "ПАУЗА" : "СЛУШАТЬ АУДИО";
+    }
+
+    placeAudio.addEventListener("play", updateAudioButtons);
+    placeAudio.addEventListener("pause", updateAudioButtons);
+    placeAudio.addEventListener("ended", updateAudioButtons);
+  </script>
+
+</body>
+</html>

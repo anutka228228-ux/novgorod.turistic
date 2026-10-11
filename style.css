@@ -1,0 +1,7915 @@
+@font-face {
+    font-family: "Slovic_Demo";
+    src: url("fonts/Slovic_Demo-Serif.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #4d0b08;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* ПЕРВЫЙ ЭКРАН */
+.hero {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+
+    position: relative;
+    overflow: hidden;
+
+    background: #4d0b08;
+}
+
+
+/* ЛЕВАЯ ЧАСТЬ */
+
+.hero-content {
+    width: 56%;
+
+    min-height: 100vh;
+
+    padding: 70px 60px 70px 7%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+    z-index: 2;
+
+    background: #eee5d2;
+}
+
+
+/* ТУРИСТИЧЕСКИЙ МАРШРУТ */
+
+.city-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #8d1715;
+  margin-bottom: 35px;
+  .hero-subtitle {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 14pt;
+}
+}
+
+.city-icon {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #a89472;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #8d1715;
+}
+
+.city-logo strong,
+.city-logo span {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.city-logo span {
+  color: #a89472;
+  margin-top: 3px;
+}.label {
+    color: #a89472;
+
+    font-size: 14px;
+    letter-spacing: 4px;
+
+    margin-bottom: 50px;
+}
+
+
+/* ЗАГОЛОВОК */
+h1 {
+  color: #8d1715;
+  font-size: clamp(38px, 3.5vw, 60px);
+  line-height: 1.05;
+  font-weight: bold;
+  margin-bottom: 40px;
+  white-space: nowrap;
+}
+
+h1 span {
+  display: block;
+  text-align: right;
+}
+
+h1 span {
+    display: block;
+
+    text-align: right;
+}
+
+
+/* ТЕКСТ */
+
+.description {
+    max-width: 650px;
+
+    color: #87302c;
+
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    margin-bottom: 22px;
+}
+
+
+/* КНОПКА */
+
+    .button {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding: 15px 28px;
+  background: transparent;
+  color: #8d1715;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 2px;
+  border: 1px solid #8d1715;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: #8d1715;
+  color: #eee5d2;
+  transform: translateX(5px);
+}
+.button {
+  align-self: flex-start;
+  margin-top: 20px;
+}
+
+
+
+/* МОБИЛЬНАЯ ВЕРСИЯ */
+
+@media (max-width: 900px) {
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 60px 30px;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 500px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    h1 span {
+        text-align: left;
+    }
+}
+/* ДЕКОРАТИВНАЯ РАМКА */
+.hero-content {
+  margin: 20px;
+  border: 1px solid #b8a789;
+  outline: 1px solid rgba(184, 167, 137, 0.45);
+  outline-offset: -8px;
+}
+.ornament-bottom {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  width: 230px;
+  z-index: 5;
+  pointer-events: none;
+}
+.ornament-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 260px;
+  z-index: 5;
+  pointer-events: none;
+}
+/* =========================================
+   ФИНАЛЬНАЯ КОРРЕКТИРОВКА ТРЕТЬЕГО ЭКРАНА
+   ========================================= */
+
+.about {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    padding: 15px 3%;
+    box-sizing: border-box;
+    background: #5d0b09;
+    overflow: hidden;
+}
+
+.about-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid #d1c09d;
+    padding: 45px 7% 0;
+    overflow: hidden;
+}
+
+.about-frame::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(209, 192, 157, 0.7);
+    pointer-events: none;
+}
+
+
+/* =========================================
+   ЗАГОЛОВОК
+   ========================================= */
+
+.about-title {
+    position: relative;
+    z-index: 20;
+
+    margin: 0 auto;
+    text-align: center;
+
+    padding: 0;
+}
+
+.about-title span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #d1c09d;
+
+    font-size: 16px;
+    letter-spacing: 5px;
+}
+
+.about-title strong {
+    display: block;
+
+    color: #eee5d2;
+
+    font-size: clamp(55px, 5vw, 82px);
+
+    line-height: 0.95;
+}
+
+
+/* декоративная линия */
+
+.title-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    width: 550px;
+    max-width: 80%;
+
+    margin: 18px auto 0;
+}
+
+.title-decoration i {
+    display: block;
+
+    width: 210px;
+    height: 1px;
+
+    background: #d1c09d;
+}
+
+.title-decoration b {
+    color: #d1c09d;
+
+    font-size: 19px;
+    font-weight: normal;
+}
+
+
+/* =========================================
+   ЦЕНТРАЛЬНАЯ ЧАСТЬ
+   ========================================= */
+
+.about-main {
+    position: relative;
+    z-index: 10;
+
+    display: grid;
+
+    grid-template-columns: 1fr 420px 1fr;
+
+    align-items: center;
+
+    gap: 45px;
+
+    max-width: 1250px;
+
+    height: 430px;
+
+    margin: 20px auto 0;
+}
+
+
+/* =========================================
+   ТЕКСТ СЛЕВА И СПРАВА
+   ========================================= */
+
+.about-text {
+    position: relative;
+
+    color: #eee5d2;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 18px;
+
+    line-height: 1.55;
+}
+
+.about-text p {
+    margin: 0 0 25px;
+}
+
+.about-left {
+    padding-top: 20px;
+}
+
+.about-right {
+    padding-top: 0;
+}
+
+.star {
+    color: #d1c09d;
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   ФОТО
+   ========================================= */
+
+.about-photo {
+    position: relative;
+    z-index: 30;
+
+    width: 500px;
+    height: 500px;
+
+    margin: 0 auto;
+    border-radius: 50%;
+
+    border: 3px solid #eee5d2;
+
+    outline: 1px solid #d1c09d;
+    outline-offset: 8px;
+
+    overflow: visible;
+    background: #5d0b09;
+}
+
+/* Внутренняя круглая рамка */
+.about-photo::before {
+    content: "";
+
+    position: absolute;
+    inset: 7px;
+
+    border: 1px dashed #d1c09d;
+    border-radius: 50%;
+
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Фотография */
+.about-photo img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* =========================================
+   БЕЖЕВАЯ ПАНЕЛЬ
+   ========================================= */
+
+.features {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+
+    width: 78%;
+    height: 300px;
+
+    background: #eee5d2;
+
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    z-index: 5;
+}
+
+
+/* =========================================
+   ЧЕТЫРЕ ПУНКТА
+   ========================================= */
+
+.feature {
+    height: 115px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 0 15px;
+
+    box-sizing: border-box;
+
+    border-right: 1px solid #b8a789;
+}
+
+.feature:last-child {
+    border-right: none;
+}
+
+.feature-icon {
+    color: #8d1715 !important;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    margin-bottom: 14px;
+}
+
+.feature span {
+    display: block;
+
+    color: #8d1715 !important;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 13px;
+
+    line-height: 1.35;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .about {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .about-frame {
+        height: auto;
+        min-height: calc(100vh - 30px);
+    }
+
+    .about-title strong {
+        font-size: 48px;
+    }
+
+    .about-main {
+        height: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 25px;
+
+        padding-bottom: 230px;
+    }
+
+    
+.about-photo {
+    position: relative;
+
+    z-index: 30;
+
+    width: 410px;
+    height: 410px;
+
+    margin: 0 auto;
+
+    border-radius: 50%;
+
+    border: 3px solid #eee5d2;
+
+    outline: 1px solid #d1c09d;
+    outline-offset: 6px;
+
+    overflow: hidden;
+
+    background: #5d0b09;
+
+    box-sizing: border-box;
+}
+
+    .about-left,
+    .about-right {
+        padding: 0;
+    }
+
+    .about-features {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+
+    width: 90%;
+    height: 260px;
+
+    box-sizing: border-box;
+    background: #eee5d2;
+
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: end;
+
+    z-index: 5;
+    padding: 0 35px 20px;
+}
+
+    .feature {
+        border-right: none;
+        border-bottom: 1px solid #b8a789;
+    }
+
+    .feature:nth-child(3),
+    .feature:nth-child(4) {
+        border-bottom: none;
+    }
+}
+/* =========================================================
+   ФИНАЛЬНЫЙ ВАРИАНТ ТРЕТЬЕГО ЭКРАНА
+   ПО МАКЕТУ
+   ========================================================= */
+
+
+/* ---------- ОСНОВНОЙ ЭКРАН ---------- */
+
+.about {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+
+    padding: 18px 4%;
+
+    background: #5d0b09;
+    color: #eee5d2;
+
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+/* ---------- ВНЕШНЯЯ РАМКА ---------- */
+
+.about-frame {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    border: 1px solid #d1c09d;
+
+    box-sizing: border-box;
+
+    padding: 45px 7% 0;
+
+    overflow: hidden;
+}
+
+
+/* внутренняя рамка */
+
+.about-frame::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 14px;
+
+    border: 1px solid rgba(209, 192, 157, 0.7);
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   ЗАГОЛОВОК
+   ========================================================= */
+
+.about-title {
+    position: relative;
+
+    z-index: 20;
+
+    width: 100%;
+
+    text-align: center;
+
+    margin: 0 auto;
+}
+
+
+.about-title span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #d1c09d;
+
+    font-size: 15px;
+
+    letter-spacing: 4px;
+}
+
+
+.about-title strong {
+    display: block;
+
+    color: #eee5d2;
+
+    font-size: clamp(42px, 4.5vw, 70px);
+
+    line-height: 0.95;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   ДЕКОРАТИВНАЯ ЛИНИЯ
+   ========================================================= */
+
+.title-decoration {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    width: 520px;
+    max-width: 80%;
+
+    margin: 17px auto 0;
+}
+
+
+.title-decoration i {
+    display: block;
+
+    width: 170px;
+
+    height: 1px;
+
+    background: #d1c09d;
+}
+
+
+.title-decoration b {
+    color: #d1c09d;
+
+    font-size: 18px;
+
+    font-weight: normal;
+}
+
+
+/* =========================================================
+   ЦЕНТРАЛЬНАЯ ЧАСТЬ
+   ========================================================= */
+
+.about-main {
+    position: relative;
+
+    z-index: 10;
+
+    display: grid;
+
+    grid-template-columns: 1fr 420px 1fr;
+
+    align-items: center;
+
+    gap: 45px;
+
+    width: 100%;
+    max-width: 1200px;
+
+    height: 430px;
+
+    margin: 20px auto 0;
+}
+
+
+/* =========================================================
+   ТЕКСТ
+   ========================================================= */
+
+.about-text {
+    position: relative;
+
+    color: #eee5d2;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 16px;
+
+    line-height: 1.45;
+
+    max-width: 250px;
+
+    z-index: 15;
+}
+
+
+.about-left {
+    justify-self: end;
+
+    padding-top: 20px;
+}
+
+
+.about-right {
+    justify-self: start;
+
+    padding-top: 0;
+}
+
+
+.about-text p {
+    margin: 0 0 22px;
+}
+
+
+/* декоративная звёздочка */
+
+.star {
+    color: #d1c09d;
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+/* =========================================================
+   ТРЕТИЙ ЭКРАН — ПОЧЕМУ ВАЖНО ПОСЕТИТЬ НОВГОРОД
+   ЕДИНСТВЕННАЯ ВЕРСИЯ
+   ========================================================= */
+
+.about {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 20px 3.5%;
+
+    box-sizing: border-box;
+
+    background: #5d0b09;
+    color: #eee5d2;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   ВНЕШНЯЯ РАМКА
+   ========================================================= */
+
+.about-frame {
+    position: relative;
+
+    width: 100%;
+    min-height: calc(100vh - 40px);
+
+    box-sizing: border-box;
+
+    border: 1px solid #d1c09d;
+
+    padding: 45px 6% 0;
+
+    overflow: hidden;
+}
+
+.about-frame::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 15px;
+
+    border: 1px solid rgba(209, 192, 157, 0.65);
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   ЗАГОЛОВОК
+   ========================================================= */
+
+.about-title {
+    position: relative;
+
+    z-index: 20;
+
+    text-align: center;
+
+    margin: 0 auto;
+}
+
+.about-title span {
+    display: block;
+
+    color: #d1c09d;
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    line-height: 1.2;
+
+    margin-bottom: 12px;
+}
+
+.about-title strong {
+    display: block;
+
+    color: #eee5d2;
+
+    font-size: clamp(48px, 4.5vw, 72px);
+
+    line-height: 0.95;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   ДЕКОРАТИВНАЯ ЛИНИЯ
+   ========================================================= */
+
+.title-decoration {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    width: 520px;
+    max-width: 70%;
+
+    margin: 22px auto 0;
+}
+
+.title-decoration i {
+    display: block;
+
+    width: 170px;
+    height: 1px;
+
+    background: #d1c09d;
+}
+
+.title-decoration b {
+    color: #d1c09d;
+
+    font-size: 17px;
+
+    font-weight: normal;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   ЦЕНТРАЛЬНАЯ ЧАСТЬ
+   ========================================================= */
+
+.about-main {
+    position: relative;
+
+    z-index: 10;
+
+    display: grid;
+
+    grid-template-columns: minmax(220px, 1fr) 410px minmax(220px, 1fr);
+
+    align-items: center;
+
+    gap: 45px;
+
+    width: 100%;
+    max-width: 1250px;
+
+    height: 455px;
+
+    margin: 15px auto 0;
+}
+
+
+/* =========================================================
+   ТЕКСТ СЛЕВА И СПРАВА
+   ========================================================= */
+
+.about-text {
+    position: relative;
+
+    z-index: 40;
+
+    color: #eee5d2;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    max-width: 275px;
+}
+
+.about-text p {
+    margin: 0 0 22px;
+}
+
+.about-left {
+    justify-self: end;
+
+    text-align: left;
+
+    padding-top: 20px;
+}
+
+.about-right {
+    justify-self: start;
+
+    text-align: left;
+
+    padding-top: 0;
+}
+
+
+/* =========================================================
+   ЗВЁЗДОЧКИ
+   ========================================================= */
+
+.star {
+    color: #d1c09d;
+
+    font-size: 23px;
+
+    line-height: 1;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   КРУГЛАЯ ФОТОГРАФИЯ
+   ========================================================= */
+
+.about-photo {
+    position: relative;
+
+    z-index: 30;
+
+    width: 390px;
+    height: 390px;
+
+    margin: 0 auto;
+
+    border-radius: 50%;
+
+    box-sizing: border-box;
+
+    border: 3px solid #eee5d2;
+
+    outline: 1px solid #d1c09d;
+
+    outline-offset: 7px;
+
+    overflow: hidden;
+
+    background: #5d0b09;
+}
+
+.about-photo::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 7px;
+
+    border: 1px solid #d1c09d;
+
+    border-radius: 50%;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+.about-photo img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   БЕЖЕВЫЙ ПОЛУКРУГ
+   ========================================================= */
+
+.about-features {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    transform: translateX(-50%);
+
+    width: 78%;
+    height: 165px;
+    box-sizing: border-box;
+
+    background: #eee5d2;
+
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    align-items: end;
+
+    z-index: 5;
+
+    padding: 0 35px 20px;
+}
+
+
+/* никаких треугольников */
+
+.about-features::before,
+.about-features::after {
+    display: none !important;
+}
+
+
+/* =========================================================
+   ЧЕТЫРЕ ПУНКТА
+   ========================================================= */
+
+.about-features .feature-icon {
+    position: relative;
+    z-index: 50;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #8d1715 ;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    margin-bottom: 10px;
+}
+.about-features .feature:last-child {
+    border-right: none;
+}
+
+/* =========================================================
+   ИКОНКИ
+   ========================================================= */
+
+.about-features .feature-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #8d1715 !important;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    margin-bottom: 10px;
+}
+
+.about-features .feature span {
+    display: block;
+
+    color: #8d1715 !important;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   ОРНАМЕНТЫ
+   ========================================================= */
+
+.about-ornament {
+    position: absolute;
+
+    width: 270px;
+    height: 270px;
+
+    bottom: -10px;
+
+    z-index: 15;
+
+    pointer-events: none;
+
+    background-image: url("images/ornament-bottom.png");
+
+    background-size: contain;
+
+    background-repeat: no-repeat;
+}
+
+.about-ornament-left {
+    left: -20px;
+
+    background-position: left bottom;
+}
+
+.about-ornament-right {
+    right: -20px;
+
+    background-position: right bottom;
+
+    transform: scaleX(-1);
+}
+
+
+/* =========================================================
+   ДЕКОРАТИВНЫЙ КРУГ СПРАВА
+   ========================================================= */
+
+.about::after {
+    content: "";
+
+    position: absolute;
+
+    width: 340px;
+    height: 340px;
+
+    right: 5%;
+    top: 42%;
+
+    border: 2px solid rgba(209, 192, 157, 0.07);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   АДАПТАЦИЯ
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .about-main {
+        grid-template-columns: minmax(180px, 1fr) 350px minmax(180px, 1fr);
+
+        gap: 25px;
+    }
+
+    .about-photo {
+        width: 350px;
+        height: 350px;
+    }
+
+    .about-text {
+        font-size: 14px;
+
+        max-width: 230px;
+    }
+
+    .about-features {
+        width: 82%;
+    }
+}
+
+
+/* =========================================================
+   ПЛАНШЕТ
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .about {
+        min-height: auto;
+
+        padding: 15px;
+    }
+
+    .about-frame {
+        min-height: auto;
+
+        padding: 40px 25px 40px;
+    }
+
+    .about-title span {
+        font-size: 12px;
+
+        letter-spacing: 3px;
+    }
+
+    .about-title strong {
+        font-size: 44px;
+    }
+
+    .title-decoration {
+        max-width: 90%;
+    }
+
+    .title-decoration i {
+        width: 100px;
+    }
+
+    .about-main {
+        display: flex;
+
+        flex-direction: column;
+
+        height: auto;
+
+        gap: 25px;
+
+        margin-top: 35px;
+    }
+
+    .about-photo {
+        order: -1;
+
+        width: 300px;
+        height: 300px;
+    }
+
+    .about-left,
+    .about-right {
+        width: 100%;
+        max-width: 500px;
+
+        padding: 0;
+
+        text-align: center;
+    }
+
+    .about-features {
+        position: relative;
+
+        left: auto;
+        bottom: auto;
+
+        transform: none;
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: 210px;
+
+        margin-top: 20px;
+
+        padding: 20px 10px;
+
+        grid-template-columns: 1fr 1fr;
+
+        border-radius: 120px 120px 0 0 / 80px 80px 0 0;
+    }
+
+    .about-features .feature {
+        height: 90px;
+
+        border-right: none;
+
+        border-bottom: 1px solid #c6b99f;
+    }
+
+    .about-features .feature:nth-child(3),
+    .about-features .feature:nth-child(4) {
+        border-bottom: none;
+    }
+
+    .about-ornament {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+
+/* =========================================================
+   ТЕЛЕФОН
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .about {
+        padding: 10px;
+    }
+
+    .about-frame {
+        padding: 30px 15px 25px;
+    }
+
+    .about-title span {
+        font-size: 10px;
+
+        letter-spacing: 2px;
+    }
+
+    .about-title strong {
+        font-size: 34px;
+    }
+
+    .title-decoration {
+        max-width: 100%;
+
+        gap: 7px;
+    }
+
+    .title-decoration i {
+        width: 55px;
+    }
+
+    .title-decoration b {
+        font-size: 14px;
+    }
+
+    .about-photo {
+        width: 240px;
+        height: 240px;
+    }
+
+    .about-text {
+        font-size: 14px;
+    }
+
+    .about-features {
+        grid-template-columns: 1fr;
+
+        border-radius: 80px 80px 0 0 / 50px 50px 0 0;
+    }
+
+    .about-features .feature {
+        border-right: none;
+
+        border-bottom: 1px solid #c6b99f;
+    }
+
+    .about-features .feature:last-child {
+        border-bottom: none;
+    }
+
+    .about-ornament {
+        width: 110px;
+        height: 110px;
+    }
+}
+.about-photo {
+    width: 390px;
+    height: 390px;
+}
+    /* =========================================
+ОБНОВЛЕНИЕ ПЕРВОГО ЭКРАНА
+========================================= */
+.hero-image {
+position: absolute;
+right: 0;
+bottom: 0;
+width: 45%;
+height: 100%;
+display: flex;
+align-items: flex-end;
+justify-content: center;
+overflow: visible;
+}
+.hero-image img {
+display: block;
+width: 85%;
+height: 85%;
+object-fit: contain;
+object-position: center bottom;
+transform: none;
+}
+/* 2. Увеличиваем верхний орнамент */
+.ornament-top {
+position: absolute;
+top: -25px;
+right: -20px;
+width: 390px;
+max-width: 48%;
+z-index: 5;
+pointer-events: none;
+}
+
+/* 3. Опускаем и увеличиваем нижний орнамент */
+.ornament-bottom {
+position: absolute;
+left: 0;
+bottom: -45px;
+width: 310px;
+max-width: 40%;
+z-index: 5;
+pointer-events: none;
+}
+
+/* 4. Делаем красивую декоративную кнопку */
+.hero .button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    padding: 17px 32px;
+
+    background: #8d1715;
+    color: #eee5d2;
+
+    border: 2px solid #eee5d2;
+    outline: 1px solid #8d1715;
+    outline-offset: 3px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    text-decoration: none;
+    text-align: center;
+
+    box-shadow: 0 0 0 5px #8d1715;
+}
+
+/* Внутренняя декоративная рамка */
+.hero .button::before {
+content: "";
+position: absolute;
+inset: 4px;
+border: 1px solid #d1c09d;
+pointer-events: none;
+}
+
+/* Эффект при наведении */
+.hero .button:hover {
+background: #eee5d2;
+color: #8d1715;
+transform: translateY(-3px);
+}
+
+/* Стрелка в кнопке */
+.hero .button {
+min-width: 260px;
+}
+
+/* 5. Корректировка для небольших экранов */
+@media (max-width: 900px) {
+.hero-image img {
+transform: translateY(25px);
+}
+
+.ornament-top {
+    width: 250px;
+    max-width: 45%;
+}
+
+.ornament-bottom {
+    width: 220px;
+    max-width: 45%;
+    bottom: -25px;
+}
+
+.hero .button {
+    min-width: 0;
+    padding: 15px 25px;
+    font-size: 13px;
+}
+}
+
+/* =========================================
+   ВЫРАВНИВАНИЕ ПАМЯТНИКА С РАМКОЙ
+   ========================================= */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    align-items: stretch;
+}
+
+/* Бежевый прямоугольник слева */
+.hero-content {
+    height: calc(100vh - 40px);
+    min-height: 0;
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+/* Область памятника справа */
+.hero-image {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    bottom: 20px;
+
+    width: 45%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+/* Сам памятник */
+.hero-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center center;
+
+    transform: none;
+}
+
+/* Орнамент не перекрывает памятник и меню */
+.ornament-top {
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Памятник располагается поверх орнамента */
+.hero-image {
+    z-index: 1;
+}
+
+/* Меню всегда находится на переднем плане */
+.top-menu {
+    z-index: 1000;
+}
+
+/* =========================================
+   ФИНАЛЬНАЯ НАСТРОЙКА ПЕРВОГО ЭКРАНА
+   ========================================= */
+
+/* 1. Памятник немного заходит на бежевый блок */
+.hero-image {
+    right: 0;
+    width: 48%;
+    z-index: 1;
+    overflow: visible;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+
+    /* Слегка сдвигаем памятник влево */
+    transform: translateX(-35px);
+}
+
+/* 2. Нижний орнамент поднимаем выше */
+.ornament-bottom {
+    bottom: 20px;
+    left: 0;
+    width: 310px;
+    max-width: 40%;
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* 3. Кнопка — компактнее, но сохраняем стиль */
+.hero .button {
+    position: relative;
+    z-index: 6;
+
+    align-self: flex-start;
+    margin-top: 22px;
+
+    min-width: 250px;
+    padding: 14px 28px;
+
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+/* 4. На небольших экранах убираем лишний сдвиг */
+@media (max-width: 900px) {
+    .hero-image {
+        width: 100%;
+    }
+
+    .hero-image img {
+        transform: translateY(25px);
+    }
+
+    .ornament-bottom {
+        bottom: 15px;
+        max-width: 45%;
+    }
+}
+
+/* ===== ФИНАЛЬНАЯ КОРРЕКТИРОВКА HERO ===== */
+
+/* Нижний орнамент: поднимаем и уводим от кнопки */
+.ornament-bottom {
+    left: 0;
+    bottom: 0;
+    width: 310px;
+    max-width: 40%;
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Кнопка располагается поверх нижнего орнамента */
+.hero .button {
+    position: relative;
+    z-index: 10;
+    margin-bottom: 45px;
+}
+
+/* Памятник слегка заходит на бежевую панель */
+
+/* Памятник ещё ближе к прямоугольнику */
+
+/* =========================================
+   ПАМЯТНИК: РАЗМЕР И ВЫРАВНИВАНИЕ
+   ========================================= */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Контейнер памятника */
+
+
+
+/* Памятник не касается верхнего орнамента */
+
+/* Памятник — до самого края экрана */
+.hero-image {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    bottom: 20px;
+    width: 48%;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+
+    overflow: hidden;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: fill;
+    object-position: center center;
+
+    transform: none;
+}
+
+/* Меню всегда выше декоративных изображений */
+.top-menu {
+    z-index: 1000;
+}
+
+/* На небольших экранах */
+@media (max-width: 900px) {
+    .hero .button {
+        margin-bottom: 35px;
+    }
+
+    .hero-image img {
+        transform: translateY(25px);
+    }
+}
+
+/* Текст на первом экране — как в макете */
+.hero .description {
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: 0;
+    color: #87302c;
+
+    max-width: 650px;
+    margin-bottom: 22px;
+}
+
+.hero .description {
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: 0;
+
+    width: 100%;
+    max-width: 470px;
+
+    margin-bottom: 22px;
+}
+
+/* =========================================
+   ЕДИНЫЙ РАЗМЕР ТРЁХ ЭКРАНОВ — 1440 × 1059
+   ========================================= */
+
+/* Первый экран — главная */
+.hero {
+    width: 100%;
+    max-width: 1440px;
+    min-height: 1059px;
+    height: 1059px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    min-height: 0;
+    height: calc(1059px - 40px);
+}
+
+.hero-image {
+    top: 25px;
+    bottom: 20px;
+}
+
+/* Второй экран — маршрут */
+.route {
+    width: 100%;
+    max-width: 1440px;
+    min-height: 1059px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.route-design {
+    width: 100%;
+    max-width: 1440px;
+}
+
+/* Третий экран — о Новгороде */
+.about {
+    width: 100%;
+    max-width: 1440px;
+    min-height: 1059px;
+    height: 1059px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.about-frame {
+    height: 100%;
+    min-height: 0;
+    box-sizing: border-box;
+}
+
+/* Адаптация для экранов меньше макета */
+@media (max-width: 900px) {
+    .hero,
+    .route,
+    .about {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .hero-content {
+        height: auto;
+        min-height: 0;
+    }
+
+    .about-frame {
+        height: auto;
+        min-height: 0;
+    }
+}
+
+
+
+/* Первый экран */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Памятник */
+
+/* Памятник выравниваем по прямоугольнику */
+.hero-image {
+    position: absolute;
+    top: 45px;
+    right: -10;
+    bottom: 10;
+
+    /* Расширяем область влево на бежевый блок */
+    width: 55%;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+
+    overflow: visible;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Картинка доходит до правого края без обрезки */
+.hero-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: fill;
+    object-position: center bottom;
+
+    transform: translateX(-20px);
+}
+
+
+/* Фон занимает всю область справа */
+.hero {
+    position: relative;
+    overflow: hidden;
+    background-color: #4b0b08;
+}
+
+/* Орнамент остаётся у правого края */
+.ornament-top {
+    position: absolute;
+    top: -25px;
+    right: -20px;
+    left: auto;
+
+    width: 390px;
+    max-width: none;
+
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Нижний орнамент — как на макете */
+
+/* Нижний орнамент — крупнее и выше */
+.ornament-bottom {
+    position: absolute;
+    left: 3;
+    bottom: 20;
+
+    width: 540px;
+    height: auto;
+    max-width: none;
+
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Бежевый прямоугольник */
+.hero-content {
+    position: relative;
+    box-sizing: border-box;
+    overflow: visible;
+    z-index: 1;
+}
+
+/* Первый экран */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Заголовок главного экрана */
+.hero h1 {
+    font-family: "Slovic_Demo", serif;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+/* Вторая строка — В НОВГОРОД */
+.hero h1 span {
+    display: block;
+    font-family: "Slovic_Demo", serif;
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 1.15;
+}
+/* Заголовок туристического маршрута */
+.route-title {
+    position: absolute;
+    top: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: max-content;
+    margin: 0;
+    text-align: center;
+    z-index: 2;
+}
+
+.route-title::before,
+.route-title::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #b49a76;
+}
+.route-logo {
+    position: absolute;
+    top: 28px;
+    left: 34px;
+    width: 68px;
+    height: auto;
+    display: block;
+    z-index: 3;
+}
+
+/* Логотип на первом экране */
+.hero-logo {
+    display: block;
+    width: 140px;
+    height: auto;
+
+    margin-top: -85px;
+    margin-left: -25px;
+    margin-bottom: 35px;
+
+    position: relative;
+    z-index: 6;
+}
+
+/* Сохраняем бежевую панель */
+.hero-content {
+    width: 56%;
+    height: calc(1059px - 40px);
+    min-height: 0;
+    margin: 20px;
+    padding: 55px 60px 55px 7%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    position: relative;
+    z-index: 2;
+
+    background: #eee5d2;
+    border: 1px solid #b8a789;
+    outline: 1px solid rgba(184, 167, 137, 0.45);
+    outline-offset: -8px;
+    box-sizing: border-box;
+}
+
+/* Заголовок не должен выходить за панель */
+.hero h1 {
+    position: relative;
+    z-index: 6;
+    white-space: normal;
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+/* Описание располагается внутри бежевого блока */
+.hero .description {
+    position: relative;
+    z-index: 6;
+    max-width: 470px;
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 18px;
+}
+
+/* Подзаголовок */
+
+
+.hero-subtitle {
+    top: 50px;
+    left: 18%;
+    width: 65%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 14pt;
+    font-weight: 400;
+    color: #a98760 !important;
+    white-space: nowrap;
+    z-index: 20;
+}
+
+.hero-subtitle-line {
+    flex: 1;
+    max-width: 120px;
+    min-width: 20px;
+    height: 1px;
+    background-color: #a98760 !important;
+}
+
+.hero-subtitle-text {
+    flex-shrink: 0;
+    text-align: center;
+    color: #a98760 !important;
+}
+
+.hero-brand-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.hero-brand-row .hero-logo {
+    position: relative;
+    flex: 0 0 140px;
+    width: 140px;
+    margin: 0;
+    height: auto;
+}
+.hero-brand-row {
+    transform: translate(-75px, -100px);
+}
+
+.hero-brand-row .hero-subtitle {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+.hero-brand-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+    line-height: 1.15;
+    font-family: 'Tenor Sans', sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.hero-brand-name span:first-child {
+    font-size: 20px;
+    color: #941b17;
+}
+
+.hero-brand-name span:last-child {
+    font-size: 18px;
+    color: #a98760;
+}
+.hero h1,
+.hero .description {
+    margin-left: -57px;
+}
+.hero h1 {
+    transform: translateY(-50px);
+}
+.hero h1 span {
+    display: inline-block;
+    transform: translate(240px, 20px);
+}
+.hero .description {
+    transform: translateY(-30px);
+}
+.hero .description {
+    font-family: 'Tenor Sans', sans-serif;
+}
+
+.route-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+
+    width: 480px;
+    min-height: 82px;
+    padding: 16px 28px;
+    box-sizing: border-box;
+
+    background: #851b19;
+    border: 3px solid #5d100e;
+    outline: 1px solid #e8d9b9;
+    outline-offset: -8px;
+
+    color: #eee2c5;
+    text-decoration: none;
+    font-family: 'Slovic_Demo', serif;
+    font-size: 32px;
+    line-height: 1.1;
+    text-align: center;
+
+    transition: background-color 0.25s ease;
+}
+
+
+
+.route-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+
+    width: 390px;
+    height: 76px;
+    padding: 0 24px;
+    box-sizing: border-box;
+
+    background: url("images/Variant2.png") center / 100% 100% no-repeat;
+    border: none;
+    outline: none;
+
+    color: #eee2c5;
+    text-decoration: none;
+    font-family: 'Slovic_Demo', serif;
+    font-size: 29px;
+    line-height: 1;
+    text-align: center;
+}
+
+.route-button-text,
+.route-button-arrow {
+    display: inline-block;
+}
+
+.route-button-arrow {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 34px;
+    line-height: 1;
+}
+
+.route-button:hover {
+    filter: brightness(1.08);
+}
+
+.route-button {
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.route-button:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.08);
+}
+
+.ornament-bottom {
+    width: 45%;
+    height: 200px;
+    object-fit: fill;
+    display: block;
+}
+
+/* Поднимаем бежевый полукруг */
+.features-section {
+    margin-top: -330px;
+}
+
+/* Увеличиваем бежевый полукруг */
+.about-features {
+    width: 98% !important;
+    height: 360px !important;
+
+    left: 50% !important;
+    bottom: 0 !important;
+    transform: translateX(-50%) !important;
+
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0 !important;
+}
+
+/* На небольших экранах сохраняем адаптивную компоновку */
+@media (max-width: 900px) {
+    .about-main {
+        display: flex !important;
+        flex-direction: column;
+        gap: 25px !important;
+    }
+
+    .about-text {
+        max-width: 500px;
+        text-align: center;
+    }
+}
+/* === ФИНАЛЬНОЕ ВЫРАВНИВАНИЕ ТРЕТЬЕГО ЭКРАНА === */
+
+.about-main {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 420px minmax(0, 1fr) !important;
+    align-items: center !important;
+    gap: 24px !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    height: 455px !important;
+    margin: 20px auto 0 !important;
+    box-sizing: border-box;
+}
+
+/* Текст слева и справа — каждый в своей колонке */
+.about-text {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 250px !important;
+    min-width: 0 !important;
+    z-index: 20 !important;
+    box-sizing: border-box;
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    overflow-wrap: break-word;
+}
+
+.about-left {
+    justify-self: end !important;
+    text-align: left !important;
+    padding-top: 20px;
+}
+
+.about-right {
+    justify-self: start !important;
+    text-align: left !important;
+    padding-top: 0;
+}
+
+/* Фото и рамки строго одного центра и размера */
+
+
+/* Адаптация под узкий экран */
+@media (max-width: 900px) {
+    .about-main {
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
+        gap: 25px !important;
+    }
+
+    .about-text {
+        width: 100% !important;
+        max-width: 500px !important;
+        text-align: center !important;
+    }
+
+    .about-left,
+    .about-right {
+        justify-self: center !important;
+        padding-top: 0 !important;
+    }
+}
+/* ===== ИСПРАВЛЯЕМ ТРЕТИЙ ЭКРАН ===== */
+
+.about-frame {
+    position: relative;
+    isolation: isolate;
+}
+
+.about-main {
+    position: relative;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 390px minmax(0, 1fr) !important;
+    align-items: center;
+    gap: 28px !important;
+    width: 100%;
+    max-width: 1250px;
+    height: 455px;
+    margin: 20px auto 0;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+/* Боковые тексты */
+.about-main > .about-left {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: end;
+    width: 100%;
+    max-width: 260px;
+    min-width: 0;
+}
+
+.about-main > .about-right {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: start;
+    width: 100%;
+    max-width: 260px;
+    min-width: 0;
+}
+/* Бежевый полукруг — позади фото */
+.about-features {
+    z-index: 1 !important;
+}
+
+/* Адаптация */
+@media (max-width: 1000px) {
+    .about-main {
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 340px) minmax(0, 1fr) !important;
+        gap: 18px !important;
+    }
+
+    .about-text {
+        font-size: 14px !important;
+        line-height: 1.45;
+    }
+}
+
+@media (max-width: 700px) {
+    .about-main {
+        display: flex !important;
+        flex-direction: column;
+        height: auto;
+        gap: 24px !important;
+    }
+
+    .about-main > .about-left,
+    .about-main > .about-right {
+        max-width: 450px;
+        text-align: center;
+    }
+}
+/* Исправляем положение центрального блока */
+.about-main {
+    width: 100% !important;
+    max-width: 1250px !important;
+    margin: 20px auto 0 !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 390px minmax(0, 1fr) !important;
+    gap: 25px !important;
+    align-items: center !important;
+    box-sizing: border-box;
+}
+
+/* Левая колонка */
+.about-main > .about-left {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: end;
+    width: 100%;
+    max-width: 240px;
+}
+
+/* Правая колонка */
+.about-main > .about-right {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: start;
+    width: 100%;
+    max-width: 240px;
+    min-width: 0;
+    z-index: 20;
+}
+
+/* Убираем лишнее влияние размеров */
+.about-main > .about-left,
+.about-main > .about-right {
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+
+/* Левый текст */
+.about-main .about-left {
+    position: absolute !important;
+    left: 0 !important;
+    top: 145px !important;
+    width: calc(50% - 230px) !important;
+    max-width: 250px !important;
+    z-index: 20 !important;
+}
+
+/* Правый текст */
+.about-main .about-right {
+    position: absolute !important;
+    right: 0 !important;
+    top: 35px !important;
+    width: calc(50% - 230px) !important;
+    max-width: 250px !important;
+    z-index: 20 !important;
+}
+
+/* Сохраняем ровные рамки */
+.about-main .about-photo::before {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    border: 1px dashed #d1c09d;
+    border-radius: 50%;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+/* ===================================
+   ТРЕТИЙ ЭКРАН — КОМПОЗИЦИЯ КАК В ОБРАЗЦЕ
+=================================== */
+
+.about {
+    position: relative;
+    overflow: hidden;
+    min-height: 700px;
+    height: 700px;
+}
+
+/* Контейнер с текстом и фотографией */
+.about-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* Текст слева */
+.about-main .about-left {
+    position: absolute !important;
+    top: 120px !important;
+    left: 4% !important;
+    width: 23% !important;
+    max-width: 250px !important;
+    margin: 0 !important;
+    z-index: 6;
+}
+
+/* Текст справа */
+.about-main .about-right {
+    position: absolute !important;
+    top: 0 !important;
+    right: 3% !important;
+    width: 23% !important;
+    max-width: 250px !important;
+    margin: 0 !important;
+    z-index: 6;
+}
+
+/* Большой бежевый полукруг */
+.about-features {
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 0 !important;
+    transform: translateX(-50%) !important;
+
+    width: 90% !important;
+    height: 390px !important;
+
+    box-sizing: border-box !important;
+    background: #eee5d2 !important;
+    border-radius: 50% 50% 0 0 / 42% 42% 0 0 !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    align-items: end !important;
+
+    padding: 0 35px 25px !important;
+    z-index: 2 !important;
+}
+
+/* Иконки и подписи на полукруге */
+.about-features .feature {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+}
+
+/* Декоративные элементы не перекрывают композицию */
+.about-ornament {
+    pointer-events: none;
+}
+
+/* Адаптация для небольших экранов */
+@media (max-width: 800px) {
+    .about {
+        height: auto;
+        min-height: 1000px;
+    }
+
+    .about-main {
+        position: relative !important;
+        top: 20px !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center;
+        gap: 25px;
+    }
+
+    
+    }
+
+    .about-main .about-left,
+    .about-main .about-right {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        width: 85% !important;
+        max-width: 450px !important;
+        text-align: center;
+    }
+
+    .about-features {
+        width: 96% !important;
+        height: 300px !important;
+        padding: 0 10px 20px !important;
+    }
+
+/* =========================================
+   THIRD SCREEN — MATCH THE DESIGN MOCKUP
+========================================= */
+
+.about {
+    position: relative !important;
+    height: 1024px !important;
+    min-height: 1024px !important;
+    overflow: hidden !important;
+    background: #5d0b09 !important;
+    box-sizing: border-box;
+}
+
+.about-frame {
+    position: absolute !important;
+    inset: 35px 4.2% 94px !important;
+    height: auto !important;
+    border: 4px solid #eee5d2;
+    box-sizing: border-box;
+}
+
+/* Heading */
+.about-title {
+    position: absolute !important;
+    top: 82px !important;
+    left: 50% !important;
+    width: 65% !important;
+    transform: translateX(-50%) !important;
+    text-align: center !important;
+    z-index: 8 !important;
+}
+
+.about-title span {
+    display: block;
+    font-size: 42px;
+    letter-spacing: 5px;
+}
+
+.about-title strong {
+    display: block;
+    font-size: 62px;
+    line-height: 1.1;
+}
+
+/* Decorative divider below the heading */
+.about-title .title-decoration {
+    margin: 24px auto 0;
+}
+
+/* Main content */
+.about-main {
+    position: absolute !important;
+    top: 300px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 440px !important;
+    margin: 0 !important;
+    display: block !important;
+    z-index: 4 !important;
+}
+
+/* Left text */
+.about-main .about-left {
+    position: absolute !important;
+    top: 0 !important;
+    left: 4% !important;
+    width: 23% !important;
+    max-width: 300px !important;
+    margin: 0 !important;
+    z-index: 6 !important;
+}
+
+/* Right text */
+.about-main .about-right {
+    position: absolute !important;
+    top: 0 !important;
+    right: 4% !important;
+    width: 23% !important;
+    max-width: 300px !important;
+    margin: 0 !important;
+    z-index: 6 !important;
+}
+
+/* Large beige semicircle behind the photo */
+.about-features {
+    position: absolute !important;
+    left: 50% !important;
+    bottom: -1px !important;
+    transform: translateX(-50%) !important;
+    width: 86% !important;
+    height: 370px !important;
+    padding: 0 45px 38px !important;
+    box-sizing: border-box !important;
+    background: #eee5d2 !important;
+    border-radius: 50% 50% 0 0 / 42% 42% 0 0 !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    align-items: end !important;
+    z-index: 2 !important;
+}
+
+.about-features .feature {
+    position: relative;
+    text-align: center;
+    z-index: 3;
+}
+
+/* Keep decorative artwork behind the text */
+.about-ornament {
+    pointer-events: none;
+}
+
+/* Smaller screens */
+@media (max-width: 900px) {
+    .about {
+        height: auto !important;
+        min-height: 1200px !important;
+    }
+
+    .about-frame {
+        position: relative !important;
+        inset: auto !important;
+        width: 92%;
+        min-height: 1150px;
+        margin: 25px auto;
+    }
+
+    .about-title {
+        top: 35px !important;
+        width: 90% !important;
+    }
+
+    .about-title span {
+        font-size: 25px;
+    }
+
+    .about-title strong {
+        font-size: 42px;
+    }
+
+    .about-main {
+        top: 210px !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center;
+        gap: 25px;
+    }
+
+
+    .about-main .about-left,
+    .about-main .about-right {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        width: 85% !important;
+        max-width: 450px !important;
+        text-align: center;
+    }
+
+    .about-features {
+        width: 96% !important;
+        height: 300px !important;
+        padding: 0 10px 20px !important;
+    }
+}
+/* ===== ФИНАЛЬНАЯ ПОДГОНКА ПОД МАКЕТ ===== */
+
+/* Заголовок возвращаем наверх */
+.about-title {
+    position: absolute !important;
+    top: 70px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 60% !important;
+    text-align: center !important;
+    z-index: 8 !important;
+}
+/* Бежевый полукруг под фото */
+.about-features {
+    height: 370px !important;
+    width: 86% !important;
+    bottom: 0 !important;
+    border-radius: 50% 50% 0 0 / 42% 42% 0 0 !important;
+    z-index: 2 !important;
+}
+
+/* Орнаменты оставляем поверх фона, но позади текста */
+.about-ornament {
+    position: absolute;
+    z-index: 3 !important;
+    pointer-events: none;
+}
+
+.about-main .about-left,
+.about-main .about-right {
+    z-index: 6 !important;
+}
+/* Исправляем высоту и положение третьего экрана */
+.about {
+    position: relative !important;
+    height: 1024px !important;
+    min-height: 1024px !important;
+    overflow: hidden !important;
+}
+
+/* Рамка экрана */
+.about-frame {
+    position: absolute !important;
+    inset: 35px 4.2% 94px !important;
+    height: auto !important;
+    box-sizing: border-box;
+}
+
+/* Заголовок */
+.about-title {
+    position: absolute !important;
+    top: 70px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 65% !important;
+    text-align: center !important;
+    z-index: 8 !important;
+}
+
+
+/* Полукруг опускаем вниз и уменьшаем высоту */
+.about-features {
+    bottom: 0 !important;
+    height: 370px !important;
+    width: 86% !important;
+    border-radius: 50% 50% 0 0 / 42% 42% 0 0 !important;
+}
+
+/* Убираем лишнюю полосу внизу */
+.about {
+    border-bottom: none !important;
+}
+
+.about-frame {
+    border-bottom: none !important;
+}
+/* Бежевый прямоугольник с закруглёнными углами */
+.about-features {
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 0 !important;
+    transform: translateX(-50%) !important;
+
+    width: 86% !important;
+    height: 370px !important;
+
+    background: #eee5d2 !important;
+    border-radius: 30px 30px 0 0 !important;
+
+    box-sizing: border-box !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    align-items: end !important;
+    padding: 0 35px 30px !important;
+
+    z-index: 2 !important;
+}
+/* Большой бежевый полукруг */
+.about-features {
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 0 !important;
+    transform: translateX(-50%) !important;
+
+    width: 86% !important;
+    height: 420px !important;
+
+    background: #eee5d2 !important;
+
+    /* Форма полукруга */
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0 !important;
+
+    box-sizing: border-box !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    align-items: end !important;
+
+    padding: 0 35px 30px !important;
+    z-index: 2 !important;
+}
+/* PNG-иллюстрации в блоке преимуществ */
+.about-features .feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    text-align: center;
+}
+
+.about-features .feature img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.about-features .feature span {
+    display: block;
+    color: #8b1712;
+    font-size: 11px;
+    line-height: 1.3;
+    text-align: center;
+}
+
+/* На узких экранах */
+@media (max-width: 700px) {
+    .about-features .feature img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .about-features .feature span {
+        font-size: 9px;
+    }
+}
+/* Увеличиваем и поднимаем PNG-иллюстрации */
+.about-features .feature {
+    transform: translateY(-35px);
+    gap: 14px;
+}
+
+.about-features .feature img {
+    width: 145px !important;
+    height: 145px !important;
+    object-fit: contain;
+}
+
+/* Подписи немного увеличиваем */
+.about-features .feature span {
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+/* Адаптация для небольших экранов */
+@media (max-width: 700px) {
+    .about-features .feature {
+        transform: translateY(-15px);
+    }
+
+    .about-features .feature img {
+        width: 75px !important;
+        height: 75px !important;
+    }
+}
+/* Подписи под иллюстрациями */
+.about-features .feature span {
+    position: relative;
+    top: 8px;
+    font-family: "Tenor Sans", sans-serif !important;
+    font-size: 12pt !important;
+    line-height: 1.3;
+    text-align: center;
+}
+/* Фон третьего экрана в едином стиле сайта */
+.about {
+    background: #5d0b09 !important;
+    background-color: #5d0b09 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Убираем отдельный фон у внутренней рамки */
+.about-frame {
+    background: transparent !important;
+}
+
+/* Бежевый полукруг оставляем бежевым */
+.about-features {
+    background: #eee5d2 !important;
+}
+
+/* Убираем лишнюю нижнюю полосу и границы */
+.about,
+.about-frame {
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+/* Следующая секция не должна создавать щель */
+.about + section {
+    margin-top: 0 !important;
+}
+/* Цвет фона третьего экрана */
+.about {
+    background-color: #4D0B08 !important;
+    background: #4D0B08 !important;
+}
+
+.about-frame {
+    background: transparent !important;
+}
+/* Временно убираем рамку третьего экрана */
+.about-frame {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.about-frame::before,
+.about-frame::after {
+    display: none !important;
+}
+/* Восстанавливаем содержимое третьего экрана */
+.about {
+    position: relative !important;
+    height: 1024px !important;
+    min-height: 1024px !important;
+    overflow: hidden !important;
+    background: #4D0B08 !important;
+}
+
+.about-frame {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+/* Заголовок */
+.about-title {
+    position: absolute !important;
+    top: 70px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 70% !important;
+    text-align: center !important;
+    z-index: 20 !important;
+}
+
+/* Фото и боковые тексты */
+.about-main {
+    position: absolute !important;
+    top: 350px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 450px !important;
+    margin: 0 !important;
+    display: block !important;
+}
+
+
+
+.about-main .about-left {
+    position: absolute !important;
+    top: 70px !important;
+    left: 5% !important;
+    width: 23% !important;
+    max-width: 300px !important;
+}
+
+.about-main .about-right {
+    position: absolute !important;
+    top: 0 !important;
+    right: 5% !important;
+    width: 23% !important;
+    max-width: 300px !important;
+}
+
+/* Бежевый полукруг */
+.about-features {
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 0 !important;
+    transform: translateX(-50%) !important;
+    width: 86% !important;
+    height: 400px !important;
+    background: #eee5d2 !important;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0 !important;
+    z-index: 2 !important;
+}
+/* Убираем декоративные узоры по бокам третьего экрана */
+.about-ornament,
+.about-ornament-left,
+.about-ornament-right {
+    display: none !important;
+}
+
+/* Если узоры добавлены через псевдоэлементы */
+.about::before,
+.about::after,
+.about-frame::before,
+.about-frame::after {
+    background-image: none !important;
+}
+/* Заменяем декоративный круг справа на узор храма */
+.about-ornament-right {
+    background: url("images/yzor.png") no-repeat center center !important;
+    background-size: contain !important;
+
+    width: 42% !important;
+    height: 90% !important;
+
+    top: 5% !important;
+    right: 0 !important;
+    left: auto !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+    opacity: 1 !important;
+
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+
+/* Убираем старый круг, если он нарисован псевдоэлементами */
+.about-ornament-right::before,
+.about-ornament-right::after {
+    content: none !important;
+    display: none !important;
+}
+/* Показываем храм вместо старого круга */
+.about-ornament-right {
+    display: block !important;
+    position: absolute !important;
+
+    width: 42% !important;
+    height: 90% !important;
+
+    top: 5% !important;
+    right: 0 !important;
+    left: auto !important;
+    bottom: auto !important;
+
+    background-image: url("images/yzor.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: contain !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+    opacity: 1 !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+
+/* Убираем старый круг */
+.about-ornament-right::before,
+.about-ornament-right::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Убираем круг, если он задан общим правилом */
+.about-ornament {
+    border-radius: 0 !important;
+}
+/* Убираем старый декоративный круг */
+.about-ornament,
+.about-ornament-right {
+    background-image: none !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+/* Новый узор храма — выше, правее и позади текста */
+.about-ornament-right {
+    display: block !important;
+    position: absolute !important;
+    width: 48% !important;
+    height: 95% !important;
+    top: -12% !important;
+    right: -5% !important;
+    left: auto !important;
+    bottom: auto !important;
+
+    background: url("images/yzor.png") center / contain no-repeat !important;
+    opacity: 0.35 !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Текст и фото поверх узора */
+.about-main,
+.about-content,
+.about-text {
+    position: relative;
+    z-index: 2;
+}
+/* Убираем старый декоративный круг */
+.about-ornament-left,
+.about-ornament-right {
+    background: none !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.about-ornament-left::before,
+.about-ornament-left::after,
+.about-ornament-right::before,
+.about-ornament-right::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Оставляем новый узор храма */
+.about-ornament-right {
+    background: url("images/yzor.png") center / contain no-repeat !important;
+}
+/* Убираем декоративные круги третьего экрана */
+.about::before,
+.about::after,
+.about-frame::before,
+.about-frame::after,
+.about-main::before,
+.about-main::after,
+.about-text::before,
+.about-text::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Убираем круг, если он сделан отдельным элементом */
+.about-ornament-left {
+    display: none !important;
+}
+
+/* Сохраняем узор храма справа */
+.about-ornament-right {
+    display: block !important;
+    background-image: url("images/yzor.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: contain !important;
+}
+/* Заголовок третьего экрана */
+.about-title span {
+    font-family: "Slovic Demo", serif !important;
+    font-size: 48px !important;
+    color: #EADCC7 !important;
+    font-weight: normal !important;
+    line-height: 1.2 !important;
+}
+
+.about-title strong {
+    font-family: "Slovic Demo", serif !important;
+    font-size: 72px !important;
+    color: #EADCC7 !important;
+    font-weight: normal !important;
+    line-height: 1.1 !important;
+}
+
+/* Выравнивание заголовка */
+.about-title {
+    text-align: center !important;
+}
+/* Заголовок третьего экрана — принудительные настройки */
+#about .about-title span {
+    font-family: "Slovic Demo", serif !important;
+    font-size: 48px !important;
+    color: #EADCC7 !important;
+    font-weight: normal !important;
+    letter-spacing: 0.08em !important;
+    line-height: 1.2 !important;
+}
+
+#about .about-title strong {
+    font-family: "Slovic Demo", serif !important;
+    font-size: 72px !important;
+    color: #EADCC7 !important;
+    font-weight: normal !important;
+    letter-spacing: 0 !important;
+    line-height: 1.1 !important;
+}
+
+#about .about-title {
+    text-align: center !important;
+}
+@font-face {
+    font-family: "Slovic Demo";
+    src: url("fonts/Slovic_Demo-Serif.otf") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Левый текстовый блок */
+.about-left {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    color: #e8d8bd;
+}
+
+/* Декоративный узор сверху */
+.about-ornament {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 14px;
+    width: 100%;
+}
+
+.about-ornament img {
+    display: block;
+    width: 64px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Заголовок */
+.about-heading {
+    margin: 0 0 15px;
+    padding: 0;
+    color: #e8d8bd;
+    font-family: inherit;
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 400;
+    line-height: 1.18;
+    text-align: left;
+    overflow-wrap: break-word;
+}
+
+/* Тонкая горизонтальная линия */
+.about-divider {
+    display: block;
+    width: 100%;
+    height: 1px;
+    min-height: 1px;
+    margin: 0 0 17px;
+    background-color: rgba(232, 216, 189, 0.42);
+}
+
+/* Основной текст */
+.about-left .about-text {
+    margin: 0;
+    padding: 0;
+    color: #e8d8bd;
+    font-family: inherit;
+    font-size: clamp(15px, 1.8vw, 19px);
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: left;
+    overflow-wrap: break-word;
+}
+
+/* Мобильная версия */
+@media (max-width: 600px) {
+    .about-left {
+        width: 100%;
+    }
+
+    .about-ornament {
+        margin-bottom: 12px;
+    }
+
+    .about-ornament img {
+        width: 58px;
+    }
+
+    .about-heading {
+        font-size: 17px;
+        line-height: 1.18;
+        margin-bottom: 15px;
+    }
+
+    .about-divider {
+        margin-bottom: 17px;
+    }
+
+    .about-left .about-text {
+        font-size: 16px;
+        line-height: 1.2;
+    }
+}
+
+/* Поднимаем весь левый блок */
+.about-left {
+    transform: translateY(-90px);
+}
+.about-heading {
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 20pt;
+    font-weight: 400;
+    line-height: 1.18;
+}
+
+.about-left .about-text {
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 20pt;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.about-heading {
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 20pt;
+    font-weight: 400;
+    line-height: 1.18;
+    margin-bottom: 16px;
+}
+
+.about-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(232, 216, 189, 0.4);
+    margin-bottom: 20px;
+}
+
+.about-left .about-text {
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 20pt;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.about-heading {
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 16pt;
+    font-weight: 400;
+    line-height: 1.2;
+    white-space: nowrap;
+    margin-bottom: 16px;
+}
+/* Левый блок — ограничиваем ширину */
+.about-left {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 260px;
+    max-width: 100%;
+    margin-left: 0;
+    transform: none;
+    box-sizing: border-box;
+    color: #e8d8bd;
+}
+
+/* Узор сверху */
+.about-ornament {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 12px;
+}
+
+.about-ornament img {
+    display: block;
+    width: 64px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Заголовок */
+.about-heading {
+    margin: 0 0 13px;
+    padding: 0;
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 13pt;
+    font-weight: 400;
+    line-height: 1.18;
+    color: #e8d8bd;
+    text-align: left;
+}
+
+/* Первая фраза строго в одну строку */
+.heading-first-line {
+    display: block;
+    white-space: nowrap;
+    font-size: 13pt;
+}
+
+/* Продолжение заголовка переносится по ширине */
+.heading-rest {
+    display: block;
+}
+
+/* Горизонтальная линия */
+.about-divider {
+    display: block;
+    width: 100%;
+    height: 1px;
+    min-height: 1px;
+    margin: 0 0 17px;
+    background: rgba(232, 216, 189, 0.45);
+}
+
+/* Основной текст */
+.about-left .about-text {
+    margin: 0;
+    padding: 0;
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 12pt;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #e8d8bd;
+    text-align: left;
+}
+
+/* На узких экранах */
+@media (max-width: 600px) {
+    .about-left {
+        width: 260px;
+        max-width: calc(100vw - 64px);
+    }
+
+    .about-ornament img {
+        width: 58px;
+    }
+
+    .about-heading,
+    .heading-first-line {
+        font-size: 13pt;
+    }
+
+    .about-left .about-text {
+        font-size: 12pt;
+    }
+}
+
+/* Вторая страница: карта и список */
+.route-page,
+.route-section,
+#route {
+    box-sizing: border-box;
+}
+
+.route-page {
+    display: grid;
+    grid-template-columns: minmax(0, 78%) minmax(0, 22%);
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    background: #eee4d0;
+}
+
+/* Карта */
+.route-map {
+    position: relative;
+    min-width: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #eee4d0;
+}
+
+.route-map > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Интерактивные точки на карте */
+.route-map .hotspot {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 4%;
+    height: 5%;
+    border-radius: 50%;
+}
+
+/* Правая панель */
+.route-list {
+    min-width: 0;
+    height: 100%;
+    overflow-y: auto;
+    padding: 48px 12px 24px;
+    box-sizing: border-box;
+    background: #eee4d0;
+    border-left: 1px solid rgba(77, 11, 8, 0.25);
+}
+
+.route-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    min-height: 68px;
+    padding: 10px 0 14px;
+    border-bottom: 1px dotted rgba(77, 11, 8, 0.45);
+    color: #873a31;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.route-item > span {
+    flex: 0 0 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: #65140f;
+    color: #f2e5ce;
+    font-size: 11px;
+}
+
+.route-item p {
+    margin: 0;
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 12px;
+    line-height: 1.25;
+}
+
+/* Узкие экраны */
+@media (max-width: 700px) {
+    .route-page {
+        grid-template-columns: minmax(0, 1fr);
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
+    }
+
+    .route-map {
+        height: 65vh;
+        min-height: 350px;
+    }
+
+    .route-list {
+        height: auto;
+        padding: 24px;
+        border-left: none;
+        border-top: 1px solid rgba(77, 11, 8, 0.25);
+    }
+}
+
+/* Исправление второго экрана с картой */
+.route-page {
+    display: grid;
+    grid-template-columns: minmax(0, 78%) minmax(0, 22%);
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Карта не должна обрезаться */
+.route-page .route-map {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.route-page .route-map > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Правая колонка со списком */
+.route-page .route-list {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    margin: 0;
+    padding: 42px 20px 24px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background: #eee4d0;
+    border-left: 1px solid rgba(77, 11, 8, 0.3);
+}
+
+/* Строки достопримечательностей */
+.route-page .route-item {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Не даём содержимому страницы создавать горизонтальный скролл */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Третий экран не должен перекрывать карту */
+#about {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   ВОССТАНОВЛЕНИЕ ВТОРОГО ЭКРАНА
+   ========================================= */
+
+.route {
+    width: 100%;
+    max-width: 1440px;
+    min-height: 100vh;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    background: #eee5d2;
+}
+
+/* Убираем заголовок, который перекрывает карту,
+   если название уже есть на изображении */
+.route > .route-title {
+    display: none;
+}
+
+/* Карта и список располагаются рядом */
+.route .route-content {
+    display: grid;
+    grid-template-columns: minmax(0, 78%) minmax(0, 22%);
+    gap: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 12px 0;
+    box-sizing: border-box;
+    align-items: stretch;
+}
+
+/* Левая часть с картой */
+.route .route-map {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: none;
+    box-sizing: border-box;
+    background: #eee5d2;
+}
+
+/* Показываем всю карту, не обрезая края */
+.route .route-map > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Правая бежевая панель */
+.route .route-list {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    padding: 35px 24px 25px;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    flex-shrink: 1;
+    box-sizing: border-box;
+    background: #eee5d2;
+    border-left: 1px solid #b8a789;
+    position: relative;
+    z-index: 5;
+}
+
+/* Пункты списка */
+.route .route-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    min-width: 0;
+    min-height: 70px;
+    padding: 12px 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border-bottom: 1px dotted #a89472;
+}
+
+.route .route-item > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 27px;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: #701711;
+    color: #eee5d2;
+    font-size: 12px;
+}
+
+.route .route-item p {
+    min-width: 0;
+    margin: 2px 0 0;
+    color: #87302c;
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 12px;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+}
+
+/* Убираем горизонтальную прокрутку */
+html,
+body {
+    overflow-x: hidden;
+}
+
+/* Мобильная версия */
+@media (max-width: 700px) {
+    .route {
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
+    }
+
+    .route .route-content {
+        grid-template-columns: minmax(0, 1fr);
+        height: auto;
+        padding: 10px;
+    }
+
+    .route .route-map {
+        height: 60vh;
+        min-height: 320px;
+    }
+
+    .route .route-list {
+        height: auto;
+        padding: 20px;
+        border-left: none;
+        border-top: 1px solid #b8a789;
+        overflow: visible;
+    }
+}
+
+/* Страница достопримечательности на основе PNG */
+.frame-page {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: #4d0b08;
+    overflow-x: hidden;
+}
+
+.frame-container {
+    position: relative;
+    width: min(100%, 1440px);
+    margin: 0 auto;
+    line-height: 0;
+}
+
+.frame-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Кнопка поверх PNG */
+.audio-button {
+    position: absolute;
+    left: 8%;
+    top: 74%;
+    z-index: 5;
+
+    padding: 12px 20px;
+    border: 1px solid #d1c09d;
+    background: #eee5d2;
+    color: #65140f;
+
+    font-family: "Slovic_Demo", Georgia, serif;
+    font-size: 14px;
+    cursor: pointer;
+    line-height: 1.2;
+}
+
+.audio-button:hover {
+    background: #d1c09d;
+}
+
+@media (max-width: 600px) {
+    .audio-button {
+        left: 8%;
+        top: 74%;
+        padding: 7px 10px;
+        font-size: 9px;
+    }
+}
+
+/* Фрейм достопримечательности — 1440 × 1024 */
+.frame-container {
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    max-width: none;
+    margin: 0 auto;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.frame-image {
+    display: block;
+    width: 1440px;
+    height: 1024px;
+    object-fit: fill;
+}
+
+/* Кнопка поверх изображения */
+.audio-button {
+    position: absolute;
+    left: 8%;
+    top: 74%;
+    z-index: 5;
+    line-height: 1.2;
+}
+
+/* Если окно меньше 1440 px — уменьшаем фрейм целиком */
+@media (max-width: 1440px) {
+    .frame-container {
+        width: 100vw;
+        height: calc(100vw * 1024 / 1440);
+    }
+
+    .frame-image {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.audio-button {
+    position: absolute;
+    left: 7%;
+    top: 74%;
+    z-index: 5;
+
+    width: 340px;
+    height: auto;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    line-height: 0;
+}
+
+.audio-button img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.audio-button:hover {
+    opacity: 0.88;
+}
+
+/* Готовая кнопка из PNG */
+.frame-container .audio-button {
+    position: absolute;
+    left: 7%;
+    top: 74%;
+    z-index: 10;
+
+    display: block;
+    width: 340px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    opacity: 1;
+    filter: none;
+
+    cursor: pointer;
+    line-height: 0;
+}
+
+.frame-container .audio-button img {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    filter: none;
+    mix-blend-mode: normal;
+}
+
+/* Не затемнять кнопку при наведении */
+.frame-container .audio-button:hover,
+.frame-container .audio-button:focus {
+    opacity: 1;
+    filter: none;
+    background: transparent;
+}
+
+.frame-container .audio-button {
+    position: absolute;
+    left: 7%;
+    top: 74%;
+    width: 340px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    line-height: 0;
+}
+
+.frame-container .audio-button img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Текст поверх кнопки */
+.frame-container .audio-button::after {
+    content: "СЛУШАТЬ АУДИО";
+    position: absolute;
+    top: 50%;
+    left: 33%;
+    transform: translateY(-50%);
+    font-family: "Slovic_Demo", serif;
+    font-size: 24pt;
+    font-weight: normal;
+    line-height: 1;
+    white-space: nowrap;
+    color: #65140f;
+    pointer-events: none;
+}
+
+/* Симметричное выравнивание текста на кнопке */
+.frame-container .audio-button {
+    position: absolute;
+    left: 7%;
+    top: 74%;
+    width: 340px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    line-height: 0;
+}
+
+.frame-container .audio-button img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Текст по центру бежевой области */
+.frame-container .audio-button::after {
+    content: "СЛУШАТЬ АУДИО";
+    position: absolute;
+
+    left: 58%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 68%;
+    text-align: center;
+
+    font-family: "Slovic_Demo", serif;
+    font-size: 24pt;
+    font-weight: normal;
+    line-height: 1;
+    white-space: nowrap;
+
+    color: #65140f;
+    pointer-events: none;
+}
+
+/* Плавная анимация кнопки */
+.frame-container .audio-button {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    transform-origin: center;
+}
+
+/* При наведении */
+.frame-container .audio-button:hover {
+    transform: translateY(-8px) scale(1.03);
+    filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.25));
+}
+
+/* Плавное нажатие */
+.frame-container .audio-button:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+/* Для тех, кто отключил анимации в настройках системы */
+@media (prefers-reduced-motion: reduce) {
+    .frame-container .audio-button {
+        transition: none;
+    }
+}
+
+/* Постоянное движение кнопки */
+.frame-container .audio-button {
+    animation: audioButtonFloat 2s ease-in-out infinite;
+    transition: filter 0.3s ease;
+    transform-origin: center;
+}
+
+/* Плавно поднимается и опускается */
+@keyframes audioButtonFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* При наведении становится заметнее */
+.frame-container .audio-button:hover {
+    animation-duration: 0.8s;
+    filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.35));
+}
+
+/* Останавливаем движение при наведении с клавиатуры */
+.frame-container .audio-button:focus-visible {
+    outline: 2px solid #eee5d2;
+    outline-offset: 4px;
+}
+
+/* Учитываем настройку уменьшения анимации */
+@media (prefers-reduced-motion: reduce) {
+    .frame-container .audio-button {
+        animation: none;
+    }
+}
+
+/* Подпись кнопки на странице монастыря */
+.frame-page .frame-container .audio-button::after {
+    content: "СЛУШАТЬ АУДИО";
+    position: absolute;
+    left: 58%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 68%;
+
+    font-family: "Slovic_Demo", serif;
+    font-size: 24pt;
+    font-weight: normal;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+
+    color: #65140f;
+    pointer-events: none;
+}
+/* Кнопка на фрейме Рюрикова городища */
+.frame-container .audio-button {
+    top: 70%;
+}
+
+/* Плашка возврата к маршруту */
+.frame-container .back-to-route {
+    position: absolute;
+    top: 24px;
+    left: 28px;
+    z-index: 20;
+
+    display: inline-block;
+    padding: 10px 16px;
+
+    color: #eee1c9;
+    background: rgba(77, 11, 8, 0.88);
+    border: 1px solid #cbb798;
+
+    font-family: "Slovic_Demo", Georgia, serif;
+    font-size: 14px;
+    line-height: 1.2;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.frame-container .back-to-route:hover {
+    transform: translateY(-3px);
+    background: #eee1c9;
+    color: #65140f;
+}
+
+@media (max-width: 600px) {
+    .frame-container .back-to-route {
+        top: 12px;
+        left: 12px;
+        padding: 7px 10px;
+        font-size: 11px;
+    }
+}
+
+/* Плашка возврата в левом верхнем углу */
+.frame-container .back-to-route {
+    position: absolute;
+    top: 65px;
+    left: 55px;
+    z-index: 20;
+
+    display: inline-block;
+    padding: 8px 13px;
+
+    font-family: "Slovic_Demo", Georgia, serif;
+    font-size: 13pt;
+    color: #eadcc7;
+    text-decoration: none;
+
+    background: rgba(77, 11, 8, 0.85);
+    border: 1px solid #eadcc7;
+    transition: background 0.25s ease, color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.frame-container .back-to-route:hover {
+    background: #eadcc7;
+    color: #500d0b;
+    transform: translateY(-3px);
+}
+
+
+.frame-container a.back-to-route {
+    position: absolute !important;
+    top: 25px !important;
+    left: 85px !important;
+    z-index: 999 !important;
+
+    display: block !important;
+    width: max-content !important;
+    padding: 8px 0 !important;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    color: #eadcc7 !important;
+    font-family: "Slovic_Demo", Georgia, serif !important;
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+    text-decoration: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.frame-container a.back-to-route:hover {
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+.frame-container a.back-to-route {
+    position: absolute !important;
+    top: 35px !important;
+    left: 90px !important;
+    z-index: 999 !important;
+
+    padding: 5px 0 !important;
+    background: transparent !important;
+    border: none !important;
+
+    color: #EADCC7 !important;
+    font-family: "Slovic_Demo", Georgia, serif !important;
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+    text-decoration: none !important;
+
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.frame-container a.back-to-route:hover {
+    transform: translateY(-2px);
+    color: #fff4df !important;
+}
+
+/* Фон страницы Свято-Юрьева монастыря */
+body.frame-page {
+    background-color: #3A0C09 !important;
+}
+
+/* Плашка возврата на странице монастыря */
+body.frame-page .frame-container a.back-to-route {
+    position: absolute !important;
+    top: 25px !important;
+    left: 85px !important;
+    z-index: 999 !important;
+
+    display: block !important;
+    width: max-content !important;
+    padding: 8px 0 !important;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    color: #EADCC7 !important;
+    font-family: "Slovic_Demo", Georgia, serif !important;
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+    text-decoration: none !important;
+
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+body.frame-page .frame-container a.back-to-route:hover {
+    transform: translateY(-2px);
+    color: #fff4df !important;
+}
+
+/* Фрейм Витославлиц */
+body.frame-page {
+    background-color: #3A0C09;
+}
+
+.frame-container {
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    max-width: none;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.frame-image {
+    display: block;
+    width: 1440px;
+    height: 1024px;
+    object-fit: fill;
+}
+
+/* Кнопка аудио */
+.frame-container .audio-button {
+    position: absolute;
+    left: 7%;
+    top: 69%;
+    width: 340px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    line-height: 0;
+    animation: audioButtonFloat 2s ease-in-out infinite;
+}
+
+.frame-container .audio-button img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.frame-container .audio-button::after {
+    content: "СЛУШАТЬ АУДИО";
+    position: absolute;
+    left: 58%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 68%;
+    font-family: "Slovic_Demo", Georgia, serif;
+    font-size: 24pt;
+    line-height: 1;
+    white-space: nowrap;
+    text-align: center;
+    color: #65140f;
+    pointer-events: none;
+}
+
+/* Постоянная анимация */
+@keyframes audioButtonFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Страница Нередицы */
+body.frame-page {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #410D06 !important;
+}
+
+/* Убираем полосу сверху */
+body.frame-page .frame-container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top: none !important;
+    box-shadow: none;
+}
+
+/* Фрейм вплотную к верхнему краю */
+body.frame-page .frame-image {
+    display: block;
+    margin-top: 0 !important;
+}
+
+/* Убираем возможный отступ у страницы */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+body.kremlin-page {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #42110A !important;
+}
+/* Страница Софийского собора */
+body.sofia-page {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #42110A !important;
+  overflow-x: hidden;
+}
+
+body.sofia-page .frame-container {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-top: none !important;
+}
+
+body.sofia-page .frame-image {
+  display: block;
+  margin: 0 !important;
+}
+/* Страница Софийского собора */
+body.sofia-page {
+  background: #3F0C04 !important;
+}
+
+body.sofia-page .frame-container {
+  width: 1400px;
+  height: 996px;
+  margin: 0 auto !important;
+}
+
+body.sofia-page .frame-image {
+  width: 1400px;
+  height: 996px;
+  object-fit: fill;
+}
+/* Отступы вокруг изображения Софийского собора */
+body.sofia-page .frame-container {
+  height: auto !important;
+  margin: 30px auto !important;
+  overflow: visible !important;
+}
+
+body.sofia-page .frame-image {
+  display: block;
+  width: 1400px;
+  height: 996px;
+  max-width: 100%;
+  object-fit: contain;
+}
+/* Кнопка аудио на странице «Тысячелетие России» */
+body.tysacheletie-page .audio-button {
+  top: 74% !important;
+}
+/* Страница «Тысячелетие России» */
+body.tysacheletie-page {
+  background: #440B08 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+}
+
+/* Отступы вокруг фотографии */
+body.tysacheletie-page .frame-container {
+  position: relative;
+  width: 1400px;
+  max-width: calc(100% - 40px);
+  height: auto !important;
+  margin: 30px auto !important;
+  padding: 0;
+  overflow: visible !important;
+  line-height: 0;
+}
+
+/* Размер фотографии */
+body.tysacheletie-page .frame-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+body.tysacheletie-page .frame-container .back-to-route {
+  position: absolute !important;
+  top: 40px !important;
+  left: 25px !important;
+  z-index: 999 !important;
+  transform: none !important;
+  line-height: 1.4 !important;
+}
+/* Страница «Владычная палата» */
+body.palata-page {
+  background: #410D06 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+}
+
+body.palata-page .frame-container {
+  position: relative;
+  width: 1400px;
+  max-width: calc(100% - 40px);
+  height: auto !important;
+  margin: 30px auto !important;
+  padding: 0;
+  overflow: visible !important;
+  line-height: 0;
+}
+
+body.palata-page .frame-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+body.palata-page .frame-container .back-to-route {
+  position: absolute !important;
+  top: 10px !important;
+  left: 100px !important;
+  z-index: 999 !important;
+  line-height: 1.4 !important;
+}
+/* Опускаем кнопку аудио на странице Владычной палаты */
+body.palata-page .frame-container .audio-button {
+  top: 75% !important;
+}
+/* Страница «Ярославово дворище» */
+body.yaroslavovo-page {
+  background: #440B08 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+}
+
+/* Изображение с отступами сверху и снизу */
+body.yaroslavovo-page .frame-container {
+  position: relative;
+  width: 1400px;
+  max-width: calc(100% - 40px);
+  height: auto !important;
+  margin: 30px auto !important;
+  padding: 0;
+  overflow: visible !important;
+  line-height: 0;
+}
+
+body.yaroslavovo-page .frame-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Ссылка назад к маршруту */
+body.yaroslavovo-page .frame-container .back-to-route {
+  position: absolute !important;
+  top: 10px !important;
+  left: 100px !important;
+  z-index: 999 !important;
+  line-height: 1.4 !important;
+}
+
+/* Кнопка аудио */
+body.yaroslavovo-page .frame-container .audio-button {
+  position: absolute;
+  left: 7%;
+  top: 70%;
+  width: 340px;
+  max-width: 35%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  line-height: 0;
+  animation: yaroslavovoFloat 2s ease-in-out infinite;
+}
+
+body.yaroslavovo-page .audio-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body.yaroslavovo-page .audio-button::after {
+  content: "СЛУШАТЬ АУДИО";
+  position: absolute;
+  top: 50%;
+  left: 58%;
+  transform: translate(-50%, -50%);
+  width: 68%;
+  color: #65140F;
+  font-family: "Slovic_Demo", Georgia, serif;
+  font-size: clamp(12px, 1.7vw, 24pt);
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+@keyframes yaroslavovoFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 600px) {
+  body.yaroslavovo-page .frame-container {
+    max-width: calc(100% - 20px);
+    margin: 20px auto !important;
+  }
+
+  body.yaroslavovo-page .audio-button {
+    width: 42%;
+  }
+
+  body.yaroslavovo-page .back-to-route {
+    left: 10px !important;
+    font-size: 10px;
+  }
+}
+/* Кнопка аудио — Ярославово дворище */
+body.yaroslavovo-page .frame-container .audio-button {
+  position: absolute !important;
+  left: 5% !important;
+  top: 69% !important;
+  width: 420px !important;
+  max-width: 42% !important;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  line-height: 0;
+  animation: yaroslavovoFloat 2s ease-in-out infinite;
+}
+/* ===== ВТОРОЙ ФРЕЙМ: ТУРИСТИЧЕСКИЙ МАРШРУТ ===== */
+
+.route {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background: #EADCC7;
+    box-sizing: border-box;
+}
+
+.route-layout {
+    display: grid;
+    grid-template-columns: 390px minmax(0, 1fr);
+    width: 100%;
+    min-height: 100vh;
+    align-items: stretch;
+}
+
+/* Левая панель */
+.route-legend {
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+    padding: 24px 22px;
+    background: #EADCC7;
+    border-right: 2px solid #440B08;
+}
+
+/* Декоративная рамка списка */
+.route-legend-content {
+    position: relative;
+    width: 100%;
+    border: 2px solid #6D1A12;
+    padding: 8px 14px;
+    box-sizing: border-box;
+}
+
+/* Пункты списка */
+.legend-item {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    min-height: 74px;
+    padding: 7px 0;
+    border-bottom: 1px solid #B78A68;
+    color: #500D0B;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.legend-item:last-child {
+    border-bottom: none;
+}
+
+.legend-item:hover .legend-number {
+    background: #7B2118;
+    transform: scale(1.08);
+}
+
+.legend-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 2px solid #EADCC7;
+    border-radius: 50%;
+    background: #500D0B;
+    color: #EADCC7;
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 20px;
+    transition: .2s ease;
+}
+
+.legend-name {
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 15px;
+    line-height: 1.25;
+}
+
+/* Правая карта */
+.route-layout > .route-map {
+    position: relative;
+    min-width: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.route-layout > .route-map .route-map-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Номера на карте */
+.route-layout > .route-map .map-point {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 3px solid #EADCC7;
+    border-radius: 50%;
+    background: #500D0B;
+    color: #EADCC7;
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 1;
+    text-decoration: none;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    transition: transform .2s ease, background .2s ease;
+}
+
+.route-layout > .route-map .map-point:hover {
+    transform: translate(-50%, -50%) scale(1.15);
+    background: #7B2118;
+}
+
+/* Начальные координаты точек */
+.route-layout > .route-map .point-kremlin       { left: 26%; top: 29%; }
+.route-layout > .route-map .point-sofia         { left: 23%; top: 36%; }
+.route-layout > .route-map .point-tysacheletie  { left: 25%; top: 44%; }
+.route-layout > .route-map .point-palata        { left: 34%; top: 37%; }
+.route-layout > .route-map .point-vitoslavlitsy { left: 15%; top: 74%; }
+.route-layout > .route-map .point-monastyr      { left: 39%; top: 84%; }
+.route-layout > .route-map .point-yaroslavovo   { left: 65%; top: 49%; }
+.route-layout > .route-map .point-nereditsa     { left: 76%; top: 15%; }
+.route-layout > .route-map .point-ryurikovo     { left: 91%; top: 14%; }
+
+/* Адаптация для небольших экранов */
+@media (max-width: 900px) {
+    .route-layout {
+        grid-template-columns: 280px minmax(0, 1fr);
+    }
+
+    .route-legend {
+        padding: 15px 10px;
+    }
+
+    .legend-item {
+        grid-template-columns: 36px minmax(0, 1fr);
+        gap: 8px;
+        min-height: 64px;
+    }
+
+    .legend-number {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+
+    .legend-name {
+        font-size: 12px;
+    }
+
+    .route-layout > .route-map .map-point {
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .route-layout {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .route-legend {
+        width: 100%;
+    }
+
+    .route-layout > .route-map {
+        min-height: 65vh;
+    }
+
+    .route-layout > .route-map .route-map-image {
+        min-height: 65vh;
+    }
+}
+/* Исправляем отображение второго фрейма */
+.route {
+    width: 100%;
+    min-height: 0;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background: #440B08;
+}
+
+.route-layout {
+    display: grid;
+    grid-template-columns: 390px minmax(0, 1fr);
+    width: 100%;
+    min-height: 0;
+    height: auto;
+    align-items: stretch;
+    gap: 0;
+}
+
+/* Левая панель не растягивает карту */
+.route-legend {
+    min-width: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Карта отображается целиком без повторения и обрезки */
+.route-layout > .route-map {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.route-layout > .route-map > .route-map-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center top;
+}
+
+/* Цифры остаются поверх изображения */
+.route-layout > .route-map .map-point {
+    z-index: 5;
+    transform: translate(-50%, -50%);
+}
+/* Исправление второго фрейма */
+.route {
+    background: #EADCC7;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.route-layout {
+    display: grid;
+    grid-template-columns: 460px minmax(0, 1fr);
+    width: 100%;
+    min-height: 100vh;
+    gap: 0;
+}
+
+/* Левая панель со списком */
+.route-legend {
+    position: relative;
+    z-index: 2;
+    background: #EADCC7;
+    border-right: 2px solid #440B08;
+}
+
+/* Правая часть — карта */
+.route-layout > .route-map {
+    display: block !important;
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #EADCC7;
+    line-height: 0;
+}
+
+/* Показываем изображение карты */
+.route-layout > .route-map > .route-map-image {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Цифры поверх карты */
+.route-layout > .route-map .map-point {
+    display: flex;
+    position: absolute;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+}
+
+/* Координаты точек */
+.point-kremlin       { left: 26%; top: 39%; }
+.point-sofia         { left: 23%; top: 35%; }
+.point-tysacheletie  { left: 28%; top: 43%; }
+.point-palata        { left: 34%; top: 38%; }
+.point-vitoslavlitsy { left: 15%; top: 76%; }
+.point-monastyr      { left: 39%; top: 91%; }
+.point-yaroslavovo   { left: 65%; top: 49%; }
+.point-nereditsa     { left: 76%; top: 15%; }
+.point-ryurikovo     { left: 91%; top: 14%; }
+/* Исправление второго фрейма */
+.route {
+    background: #EADCC7;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.route-layout {
+    display: grid;
+    grid-template-columns: 460px minmax(0, 1fr);
+    width: 100%;
+    min-height: 100vh;
+    gap: 0;
+}
+
+/* Левая панель со списком */
+.route-legend {
+    position: relative;
+    z-index: 2;
+    background: #EADCC7;
+    border-right: 2px solid #440B08;
+}
+
+/* Правая часть — карта */
+.route-layout > .route-map {
+    display: block !important;
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #EADCC7;
+    line-height: 0;
+}
+
+/* Показываем изображение карты */
+.route-layout > .route-map > .route-map-image {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Цифры поверх карты */
+.route-layout > .route-map .map-point {
+    display: flex;
+    position: absolute;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+}
+
+/* Координаты точек */
+.point-kremlin       { left: 26%; top: 39%; }
+.point-sofia         { left: 23%; top: 35%; }
+.point-tysacheletie  { left: 28%; top: 43%; }
+.point-palata        { left: 34%; top: 38%; }
+.point-vitoslavlitsy { left: 15%; top: 76%; }
+.point-monastyr      { left: 39%; top: 91%; }
+.point-yaroslavovo   { left: 65%; top: 49%; }
+.point-nereditsa     { left: 76%; top: 15%; }
+.point-ryurikovo     { left: 91%; top: 14%; }
+/* Возвращаем карту справа */
+.route-layout {
+    display: grid;
+    grid-template-columns: 460px minmax(0, 1fr);
+    width: 100%;
+    min-height: 100vh;
+    gap: 0;
+    background: #EADCC7;
+}
+
+.route-legend {
+    grid-column: 1;
+    position: relative;
+    z-index: 2;
+    background: #EADCC7;
+}
+
+.route-layout > .route-map {
+    grid-column: 2;
+    display: block !important;
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #EADCC7;
+    line-height: 0;
+}
+
+.route-layout > .route-map > img.route-map-image {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    object-fit: contain;
+}
+
+/* Номера поверх изображения */
+.route-layout > .route-map > .map-point {
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    transform: translate(-50%, -50%);
+}
+/* Второй фрейм: список слева, карта справа */
+.route {
+width: 100%;
+min-height: 100vh;
+padding: 0;
+margin: 0;
+overflow: hidden;
+background: #EADCC7;
+}
+
+.route-layout {
+display: grid;
+grid-template-columns: 390px minmax(0, 1fr);
+width: 100%;
+min-height: 100vh;
+gap: 0;
+}
+
+/* Список */
+.route-legend {
+grid-column: 1;
+position: relative;
+z-index: 2;
+padding: 20px;
+background: #EADCC7;
+box-sizing: border-box;
+}
+
+/* Карта */
+.route-layout > .route-map {
+grid-column: 2;
+position: relative;
+min-width: 0;
+min-height: 100vh;
+overflow: hidden;
+line-height: 0;
+background: #EADCC7;
+}
+
+.route-map-image {
+display: block;
+width: 100%;
+height: auto;
+max-width: none;
+}
+
+/* Номера */
+.route-map .map-point {
+position: absolute;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 38px;
+height: 38px;
+box-sizing: border-box;
+border: 3px solid #EADCC7;
+border-radius: 50%;
+background: #500D0B;
+color: #EADCC7;
+font-family: "Tenor Sans", sans-serif;
+font-size: 18px;
+line-height: 1;
+text-decoration: none;
+transform: translate(-50%, -50%);
+z-index: 5;
+}
+
+/* Начальное расположение точек */
+.route-map .point-kremlin       { left: 26%; top: 39%; }
+.route-map .point-sofia         { left: 23%; top: 35%; }
+.route-map .point-tysacheletie  { left: 28%; top: 43%; }
+.route-map .point-palata        { left: 34%; top: 38%; }
+.route-map .point-vitoslavlitsy { left: 15%; top: 76%; }
+.route-map .point-monastyr      { left: 39%; top: 91%; }
+.route-map .point-yaroslavovo   { left: 65%; top: 49%; }
+.route-map .point-nereditsa     { left: 76%; top: 15%; }
+.route-map .point-ryurikovo     { left: 91%; top: 14%; }
+
+@media (max-width: 800px) {
+.route-layout {
+grid-template-columns: 280px minmax(0, 1fr);
+}
+.route-legend {
+    padding: 10px;
+}
+}
+.route-layout {
+    display: grid;
+    grid-template-columns: 460px minmax(0, 1fr);
+    align-items: stretch;
+    width: 100%;
+    min-height: 100vh;
+    gap: 0;
+}
+
+.route-legend {
+    grid-column: 1;
+    min-width: 0;
+}
+
+.route-layout > .route-map {
+    grid-column: 2;
+    grid-row: 1;
+    position: relative;
+    display: block;
+    min-width: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.route-layout > .route-map > .route-map-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+/* ===== ЦЕНТРИРУЕМ ВТОРОЙ ФРЕЙМ ===== */
+
+#route {
+    width: 100%;
+    min-height: 100vh;
+    padding: 35px 24px;
+    box-sizing: border-box;
+    background: #440B08;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Общая композиция: список + карта */
+#route .route-layout {
+    display: grid;
+    grid-template-columns: 360px minmax(0, 1fr);
+    align-items: stretch;
+    width: 100%;
+    max-width: 1500px;
+    min-height: 0;
+    margin: 0 auto;
+    gap: 0;
+    background: #EADCC7;
+    border: 2px solid #EADCC7;
+    box-sizing: border-box;
+}
+
+/* Левая панель */
+#route .route-legend {
+    width: 100%;
+    min-width: 0;
+    padding: 20px 18px;
+    background: #EADCC7;
+    border-right: 2px solid #440B08;
+    box-sizing: border-box;
+}
+
+/* Рамка списка */
+#route .route-legend-content {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Карта справа */
+#route .route-map {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    background: #EADCC7;
+    line-height: 0;
+}
+
+/* Изображение карты */
+#route .route-map-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Номера на карте */
+#route .route-map .map-point {
+    position: absolute;
+    z-index: 5;
+    transform: translate(-50%, -50%);
+}
+
+/* Планшеты и небольшие экраны */
+@media (max-width: 900px) {
+    #route {
+        padding: 20px 12px;
+    }
+
+    #route .route-layout {
+        grid-template-columns: 300px minmax(0, 1fr);
+    }
+
+    #route .route-legend {
+        padding: 12px;
+    }
+}
+
+/* Телефоны */
+@media (max-width: 600px) {
+    #route .route-layout {
+        grid-template-columns: 1fr;
+    }
+
+    #route .route-map {
+        min-height: 0;
+    }
+
+    #route .route-map-image {
+        height: auto;
+        object-fit: contain;
+    }
+}
+/* Фон второго фрейма — как у первого и третьего */
+#route {
+    background-color: #500D0B;
+}
+
+/* Общий фон композиции */
+#route .route-layout {
+    background-color: #500D0B;
+    border-color: #500D0B;
+}
+
+/* Левая панель со списком */
+#route .route-legend {
+    background-color: #500D0B;
+    border-right-color: #EADCC7;
+}
+
+/* Рамка списка */
+#route .route-legend-content {
+    background-color: #500D0B;
+}
+
+/* Правая часть с картой */
+#route .route-map {
+    background-color: #500D0B;
+}
+
+/* Текст и разделители списка */
+#route .legend-item {
+    color: #EADCC7;
+    border-bottom-color: #B78A68;
+}
+
+#route .legend-number {
+    background-color: #440B08;
+    color: #EADCC7;
+    border-color: #EADCC7;
+}
+
+/* Номера на карте */
+#route .map-point {
+    background-color: #440B08;
+    color: #EADCC7;
+    border-color: #EADCC7;
+}
+/* Убираем переходы между фоном второго фрейма */
+#route,
+#route .route-layout,
+#route .route-legend,
+#route .route-legend-content,
+#route .route-map {
+    background: #500D0B !important;
+    border-color: #500D0B !important;
+    box-shadow: none !important;
+}
+
+/* Убираем лишнюю вертикальную линию */
+#route .route-legend {
+    border-right: none !important;
+}
+
+/* Убираем рамку вокруг композиции */
+#route .route-layout {
+    outline: none !important;
+}
+
+/* Сохраняем бежевый текст и разделители списка */
+#route .legend-item {
+    color: #EADCC7;
+    border-bottom-color: #B78A68;
+}
+
+#route .legend-number,
+#route .map-point {
+    background: #440B08;
+    color: #EADCC7;
+    border-color: #EADCC7;
+}
+/* Убираем пустое пространство после карты */
+#route {
+    min-height: 0 !important;
+    height: auto !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    align-items: flex-start !important;
+}
+
+/* Композиция заканчивается сразу после списка и карты */
+#route .route-layout {
+    min-height: 0 !important;
+    height: auto !important;
+    margin-bottom: 0 !important;
+    align-items: start !important;
+}
+
+/* Карта не растягивается на всю высоту экрана */
+#route .route-map {
+    min-height: 0 !important;
+    height: auto !important;
+    align-self: start !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Изображение сохраняет пропорции */
+#route .route-map-image {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    object-fit: contain !important;
+}
+
+/* Убираем верхний отступ третьего фрейма */
+#about {
+    margin-top: 0 !important;
+}
+/* Выравнивание цифр на карте маршрута */
+#route .route-map .point-kremlin {
+    left: 42%;
+    top: 34%;
+}
+
+#route .route-map .point-sofia {
+    left: 39%;
+    top: 42%;
+}
+
+#route .route-map .point-tysacheletie {
+    left: 41%;
+    top: 51%;
+}
+
+#route .route-map .point-palata {
+    left: 50%;
+    top: 43%;
+}
+
+#route .route-map .point-vitoslavlitsy {
+    left: 15%;
+    top: 77%;
+}
+
+#route .route-map .point-monastyr {
+    left: 39%;
+    top: 88%;
+}
+
+#route .route-map .point-yaroslavovo {
+    left: 65%;
+    top: 49%;
+}
+
+#route .route-map .point-nereditsa {
+    left: 76%;
+    top: 13%;
+}
+
+#route .route-map .point-ryurikovo {
+    left: 91%;
+    top: 12%;
+}
+/* Корректируем положение цифр 8 и 9 */
+#route .route-map .point-nereditsa {
+    left:79%;
+    top: 13%;
+}
+
+#route .route-map .point-ryurikovo {
+    left: 91%;
+    top: 8%;
+}
+#route .route-map .point-yaroslavovo {
+    left:70%;
+    top: 49%;
+}
+/* Уменьшаем номера 1–4 */
+#route .route-map .point-kremlin,
+#route .route-map .point-sofia,
+#route .route-map .point-tysacheletie,
+#route .route-map .point-palata {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    border-width: 2px;
+}
+/* Поднимаем цифры 1 и 3 */
+#route .route-map .point-kremlin {
+    top: 31%;
+}
+
+#route .route-map .point-tysacheletie {
+    top: 47%;
+}
+#route .route-map .point-vitoslavlitsy {
+    top: 65%;
+}
+/* Исправляем композицию текста третьего фрейма */
+#about .about-frame {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+#about .about-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px minmax(0, 1fr);
+    align-items: start;
+    gap: 35px;
+    width: 100%;
+    max-width: 1250px;
+    margin: 30px auto 0;
+    box-sizing: border-box;
+}
+
+/* Левая колонка */
+#about .about-left {
+    grid-column: 1;
+    width: 100%;
+    max-width: 360px;
+    min-width: 0;
+    justify-self: start;
+}
+
+/* Центральная фотография, если она находится в about-main */
+#about .about-photo {
+    grid-column: 2;
+    width: 300px;
+    justify-self: center;
+}
+
+/* Правая колонка */
+#about .about-right {
+    grid-column: 3;
+    width: 100%;
+    max-width: 300px;
+    min-width: 0;
+    justify-self: end;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Заголовок слева */
+#about .about-heading {
+    max-width: 360px;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+/* Текст слева */
+#about .about-left .about-text {
+    max-width: 360px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Адаптация для небольшого экрана */
+@media (max-width: 850px) {
+    #about .about-main {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 25px;
+    }
+
+    #about .about-left,
+    #about .about-photo,
+    #about .about-right {
+        grid-column: 1;
+        max-width: 100%;
+        width: 100%;
+        justify-self: stretch;
+    }
+}
+/* Скрываем нижний дублирующийся текст */
+#about > .about-left {
+    display: none !important;
+}
+/* Исправляем композицию третьего фрейма */
+#about {
+    position: relative;
+    overflow: hidden;
+    min-height: 1024px;
+    padding: 70px 0 0;
+    box-sizing: border-box;
+}
+
+/* Общая рамка */
+#about .about-frame {
+    position: relative;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 35px 200px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+/* Заголовок целиком виден */
+#about .about-title {
+    position: relative;
+    margin: 0 auto 100px;
+    text-align: center;
+}
+
+/* Левый и правый текст */
+#about .about-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 100px;
+    align-items: start;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Левый блок */
+#about .about-left {
+    width: 100%;
+    max-width: 480px;
+    justify-self: start;
+}
+
+#about .about-heading {
+    max-width: 480px;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+#about .about-left .about-text {
+    max-width: 350px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Правый блок */
+#about .about-right {
+    width: 100%;
+    max-width: 300px;
+    justify-self: end;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Нижняя полукруглая форма */
+#about .about-features {
+    position: relative;
+    z-index: 2;
+    margin-top: 100px;
+}
+
+/* Адаптация для узких экранов */
+@media (max-width: 800px) {
+    #about {
+        min-height: auto;
+        padding-top: 45px;
+    }
+
+    #about .about-frame {
+        padding: 0 20px 100px;
+    }
+
+    #about .about-title {
+        margin-bottom: 50px;
+    }
+
+    #about .about-main {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    #about .about-left,
+    #about .about-right {
+        max-width: 100%;
+    }
+
+    #about .about-left .about-text {
+        max-width: 100%;
+    }
+
+    #about .about-features {
+        margin-top: 50px;
+    }
+}
+/* Заголовок левого блока третьего фрейма */
+#about .about-left .about-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 350px;
+    margin: 0;
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: left;
+    color: #EADCC7;
+}
+
+/* Первая строка */
+#about .about-left .heading-first-line {
+    display: block;
+    white-space: nowrap;
+}
+
+/* Вторая строка */
+#about .about-left .heading-rest {
+    display: block;
+    white-space: normal;
+}
+/* Поднимаем весь текст в третьем фрейме */
+#about .about-main {
+    position: relative;
+    transform: translateY(-100px);
+}
+
+/* Левый текст */
+#about .about-left {
+    position: relative;
+    z-index: 2;
+}
+
+/* Правый текст */
+#about .about-right {
+    position: relative;
+    z-index: 2;
+    transform: translateY(-20px);
+}
+
+/* Декоративный винтажный узор */
+#about .about-main::before {
+    content: "";
+    position: absolute;
+    left: -35px;
+    top: -35px;
+    width: 100px;
+    height: 100px;
+    background: url("images/yzor2.png") center / contain no-repeat;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+/* Второй узор справа */
+#about .about-main::after {
+    content: "";
+    position: absolute;
+    right: 5px;
+    top: -50px;
+    width: 120px;
+    height: 120px;
+    background: url("images/yzor2.png") center / contain no-repeat;
+    transform: scaleX(-1);
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+/* Чтобы текст не перекрывался узорами */
+#about .about-left,
+#about .about-right {
+    z-index: 2;
+}
+
+/* На небольших экранах поднимаем текст чуть меньше */
+@media (max-width: 768px) {
+    #about .about-main {
+        transform: translateY(-40px);
+    }
+}
+/* Узор по обеим сторонам третьего фрейма */
+#about .about-ornament-left,
+#about .about-ornament-right {
+    position: absolute;
+    top: 130px;
+    width: 150px;
+    height: 100px;
+    background-image: url("images/yzor2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 1;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Слева */
+#about .about-ornament-left {
+    left: 35px;
+}
+
+/* Справа — зеркальное отражение */
+#about .about-ornament-right {
+    right: 35px;
+    transform: scaleX(-1);
+}
+
+/* Чтобы узоры позиционировались относительно фрейма */
+#about {
+    position: relative;
+    overflow: hidden;
+}
+/* УЗОР YZOR2 С ДВУХ СТОРОН ТРЕТЬЕГО ФРЕЙМА */
+#about.about {
+    position: relative !important;
+    overflow: hidden;
+}
+
+/* Левый и правый узоры */
+#about.about::before,
+#about.about::after {
+    content: "";
+    position: absolute;
+    top: 120px;
+    width: 130px;
+    height: 100px;
+    background-image: url("./images/yzor2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Слева */
+#about.about::before {
+    left: 25px;
+}
+
+/* Справа */
+#about.about::after {
+    right: 25px;
+    transform: scaleX(-1);
+
+/* Исправляем расположение текста третьего фрейма */
+#about .about-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+}
+
+/* Левый текст */
+#about .about-left {
+    position: relative;
+    margin-top: 0;
+    transform: none;
+}
+
+/* Правый текст — возвращаем на экран */
+#about .about-main .about-right {
+    position: relative;
+    align-self: start;
+    margin-top: 0;
+    transform: none !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Убираем лишний верхний отступ первого абзаца */
+#about .about-right p:first-of-type {
+    margin-top: 0;
+}
+}
+
+/* Опускаем правый текст */
+#about .about-main .about-right {
+    top: 50px !important;
+}
+/* Горизонтальная линия в правом блоке */
+#about .about-right p:first-of-type {
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(234, 220, 199, 0.45);
+    margin-bottom: 14px;
+}
+
+/* Круглая фотография 3novgorod с пунктиром */
+.about-main {
+    position: relative;
+}
+
+.about-main::after {
+    content: none;
+}
+
+.about-photo {
+    position: absolute;
+    width: 410px;
+    height: 410px;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    border: 2px dotted #EADCC7;
+    border-radius: 50%;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 3;
+}
+
+.about-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+/* На небольших экранах */
+@media (max-width: 700px) {
+    .about-photo {
+        width: 260px;
+        height: 260px;
+    }
+}
+
+/* Принудительно делаем фото 3novgorod круглым */
+.about-main .about-photo {
+    position: absolute !important;
+    width: 410px !important;
+    height: 410px !important;
+    min-width: 410px !important;
+    min-height: 410px !important;
+    max-width: 410px !important;
+    max-height: 410px !important;
+    aspect-ratio: 1 / 1 !important;
+    left: 50% !important;
+    top: 55% !important;
+    transform: translate(-50%, -50%) !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+.about-main .about-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    display: block !important;
+}
+
+.about-main::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Узоры по бокам третьего фрейма */
+#about .about-frame {
+    position: relative;
+    overflow: hidden;
+}
+
+#about .about-side-pattern {
+    position: absolute;
+    top: 88%;
+    width: 230px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+#about .about-side-pattern img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Левый узор */
+#about .about-side-pattern-left {
+    left: 0;
+    transform: translateY(-50%);
+}
+
+/* Правый узор */
+#about .about-side-pattern-right {
+    right: 0;
+    transform: translateY(-50%);
+}
+
+/* Чтобы узоры не мешали на узком экране */
+@media (max-width: 700px) {
+    #about .about-side-pattern {
+        width: 100px;
+        top: 95%;
+    }
+}
+/* Увеличенные боковые узоры поверх прямоугольника */
+#about .about-side-pattern {
+    position: absolute;
+    top: 95%;
+    width: 340px;
+    max-width: none;
+    height: auto;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Левый узор */
+#about .about-side-pattern-left {
+    left: 0;
+    transform: translate(-10%, -50%);
+}
+
+/* Правый узор */
+#about .about-side-pattern-right {
+    right: 0;
+    transform: translate(10%, -50%);
+}
+
+/* Адаптация для небольших экранов */
+@media (max-width: 700px) {
+    #about .about-side-pattern {
+        width: 180px;
+    }
+}
+/* Боковые узоры */
+#about .about-side-pattern {
+    position: absolute;
+    top: 55%;
+    width: 340px;
+    max-width: none;
+    height: auto;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Левый узор — левее */
+#about .about-side-pattern-left {
+    left: -70px;
+    transform: translate(-20%, -50%);
+}
+
+/* Правый узор — правее */
+#about .about-side-pattern-right {
+    right: -70px;
+    transform: translate(20%, -50%);
+}
+
+@media (max-width: 700px) {
+    #about .about-side-pattern {
+        width: 180px;
+    }
+
+    #about .about-side-pattern-left {
+        left: -25px;
+    }
+
+    #about .about-side-pattern-right {
+        right: -25px;
+    }
+}
+/* Опускаем боковые узоры к началу овала */
+#about .about-side-pattern {
+    top: 78%;
+}
+
+/* Левый узор */
+#about .about-side-pattern-left {
+    left: -70px;
+    transform: translate(-20%, -50%);
+}
+
+/* Правый узор */
+#about .about-side-pattern-right {
+    right: -70px;
+    transform: translate(20%, -50%);
+}
+/* Опускаем кнопку аудио на странице «Тысячелетие России» */
+body.tysacheletie-page .frame-container {
+    position: relative;
+}
+
+body.tysacheletie-page .audio-button {
+    position: absolute !important;
+    top: 82% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: auto !important;
+    margin-top: 0 !important;
+    z-index: 20;
+}
+/* Кнопка аудио — левее и ниже */
+body.tysacheletie-page .audio-button {
+    position: absolute !important;
+    top: 88% !important;
+    left: 18% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translateX(-50%) !important;
+    z-index: 20;
+}
+/* Пульсация кнопки аудио */
+body.tysacheletie-page .audio-button {
+    animation: audioPulse 1.6s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes audioPulse {
+    0%, 100% {
+        transform: translateX(-50%) scale(1);
+    }
+
+    50% {
+        transform: translateX(-50%) scale(1.1);
+    }
+}
+
+/* Пульсация кнопки «Слушать аудио» */
+body.tysacheletie-page .audio-button {
+    animation: pulseAudio 1.5s ease-in-out infinite !important;
+    transform-origin: center center;
+    will-change: transform;
+}
+
+@keyframes pulseAudio {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+/* Убираем верхнее меню */
+.top-menu {
+    display: none !important;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-route-list {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 0 !important;
+    }
+
+    .mobile-route-list .mobile-route-item {
+        display: block !important;
+        width: 100% !important;
+        padding: 16px 0 !important;
+        box-sizing: border-box !important;
+        border-bottom: 1px solid #9b7560 !important;
+        background: transparent !important;
+    }
+
+    .mobile-route-list .mobile-place-link {
+        display: grid !important;
+        grid-template-columns: 42px minmax(0, 1fr) 20px !important;
+        align-items: center !important;
+        gap: 12px !important;
+        color: #EADCC7 !important;
+        text-decoration: none !important;
+        font-family: "Tenor Sans", sans-serif !important;
+        font-size: 15px !important;
+        line-height: 1.4 !important;
+    }
+
+    .mobile-route-list .mobile-route-number {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 38px !important;
+        height: 38px !important;
+        border: 1px solid #EADCC7 !important;
+        border-radius: 50% !important;
+        color: #EADCC7 !important;
+    }
+
+    .mobile-route-list .mobile-audio-button {
+        display: block !important;
+        width: 100% !important;
+        margin-top: 12px !important;
+        padding: 13px !important;
+        box-sizing: border-box !important;
+        border: 1px solid #EADCC7 !important;
+        background: transparent !important;
+        color: #EADCC7 !important;
+        font-family: "Tenor Sans", sans-serif !important;
+        font-size: 14px !important;
+        cursor: pointer !important;
+    }
+
+    .mobile-route-list .mobile-audio-button:active {
+        background: #6a211a !important;
+    }
+}
+/* На мобильных показываем только готовую обложку */
+@media screen and (max-width: 768px) {
+    body > main > .hero {
+        display: none !important;
+    }
+
+    .mobile-version {
+        display: block !important;
+    }
+
+    .mobile-cover {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .mobile-cover img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
+/* Мобильная версия: оставляем только готовые изображения */
+@media screen and (max-width: 768px) {
+
+    /* Скрываем старый третий экран */
+    body > main > #about {
+        display: none !important;
+    }
+
+    /* Показываем мобильную версию */
+    body > main > .mobile-version {
+        display: block !important;
+    }
+
+    /* Картинка третьего экрана */
+    .mobile-intro {
+        display: block !important;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .mobile-intro img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
+@media screen and (max-width: 768px) {
+
+    /* Убираем заголовок мобильного маршрута */
+    .mobile-route-title {
+        display: none !important;
+    }
+
+    .mobile-route-subtitle {
+        display: none !important;
+    }
+
+    /* Отступы и общий фон */
+    #route .mobile-route {
+        padding: 20px 18px 35px !important;
+        background: #500D0B !important;
+        color: #EADCC7 !important;
+    }
+
+    /* Карточки */
+    .mobile-route-list .mobile-route-item {
+        padding: 18px 0 !important;
+        border-bottom: 1px solid rgba(234, 220, 199, 0.45) !important;
+    }
+
+    /* Названия достопримечательностей */
+    .mobile-place-link {
+        color: #EADCC7 !important;
+        font-family: "Tenor Sans", sans-serif !important;
+        font-size: 16px !important;
+        text-decoration: none !important;
+    }
+
+    /* Аудиокнопки */
+    .mobile-audio-button {
+        border: 1px solid #EADCC7 !important;
+        background: transparent !important;
+        color: #EADCC7 !important;
+        border-radius: 0 !important;
+        font-family: "Tenor Sans", sans-serif !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    /* Полностью скрываем заголовки мобильного маршрута */
+    .mobile-version .mobile-route-title,
+    .mobile-version .mobile-route-subtitle,
+    #route .mobile-route-title,
+    #route .mobile-route-subtitle {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Убираем лишнее пространство перед списком */
+    .mobile-route {
+        padding-top: 0 !important;
+    }
+
+    .mobile-route-list {
+        margin-top: 0 !important;
+    }
+
+    /* Делаем названия аккуратнее */
+    .mobile-route-list .mobile-place-link {
+        display: grid !important;
+        grid-template-columns: 36px minmax(0, 1fr) 20px !important;
+        align-items: center !important;
+        gap: 10px !important;
+        width: 100% !important;
+        color: #EADCC7 !important;
+        text-decoration: none !important;
+        font-family: "Tenor Sans", sans-serif !important;
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+    }
+
+    .mobile-route-list .mobile-audio-button {
+        width: 100% !important;
+        margin-top: 10px !important;
+        padding: 12px !important;
+        background: transparent !important;
+        color: #EADCC7 !important;
+        border: 1px solid #EADCC7 !important;
+        font-family: "Tenor Sans", sans-serif !important;
+    }
+}
+/* МОБИЛЬНАЯ КАРТА МАРШРУТА */
+.mobile-map-screen {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+    .mobile-map-screen {
+        display: block !important;
+        width: 100%;
+        padding: 10px 14px 35px;
+        box-sizing: border-box;
+        background: #500D0B;
+        color: #EADCC7;
+    }
+
+    /* Карта */
+    .mobile-map {
+        position: relative;
+        width: 100%;
+        margin: 0 auto 24px;
+        line-height: 0;
+    }
+
+    .mobile-map > img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* Цифры поверх карты */
+    .mobile-map-point {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        box-sizing: border-box;
+        border: 2px solid #EADCC7;
+        border-radius: 50%;
+        background: #500D0B;
+        color: #EADCC7;
+        font-family: "Tenor Sans", sans-serif;
+        font-size: 14px;
+        line-height: 1;
+        text-decoration: none;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+
+    /* Позиции как на компьютерной карте */
+    .mobile-map .point-kremlin {
+        left: 42%;
+        top: 31%;
+    }
+
+    .mobile-map .point-sofia {
+        left: 39%;
+        top: 42%;
+    }
+
+    .mobile-map .point-tysacheletie {
+        left: 41%;
+        top: 47%;
+    }
+
+    .mobile-map .point-palata {
+        left: 50%;
+        top: 43%;
+    }
+
+    .mobile-map .point-vitoslavlitsy {
+        left: 15%;
+        top: 73%;
+    }
+
+    .mobile-map .point-monastyr {
+        left: 39%;
+        top: 88%;
+    }
+
+    .mobile-map .point-yaroslavovo {
+        left: 69%;
+        top: 49%;
+    }
+
+    .mobile-map .point-nereditsa {
+        left: 81%;
+        top: 13%;
+    }
+
+    .mobile-map .point-ryurikovo {
+        left: 91%;
+        top: 8%;
+    }
+
+    /* Список под картой */
+    .mobile-map-legend {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    .mobile-map-legend-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        min-height: 62px;
+        padding: 10px 0;
+        box-sizing: border-box;
+        border-bottom: 1px solid rgba(234, 220, 199, 0.45);
+        color: #EADCC7;
+        font-family: "Tenor Sans", sans-serif;
+        font-size: 16px;
+        line-height: 1.4;
+        text-decoration: none;
+    }
+
+    .mobile-map-legend-item > span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 38px;
+        width: 38px;
+        height: 38px;
+        box-sizing: border-box;
+        border: 1px solid #EADCC7;
+        border-radius: 50%;
+        color: #EADCC7;
+        font-size: 17px;
+    }
+
+    .mobile-map-point:active,
+    .mobile-map-legend-item:active {
+        opacity: 0.7;
+    }
+}
+@media screen and (max-width: 768px) {
+    .mobile-map .mobile-map-point {
+        width: 12px !important;
+        height: 12px !important;
+        border-width: 1px !important;
+        font-size: 7px !important;
+        line-height: 1 !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    .mobile-version,
+    .mobile-map-screen,
+    #route {
+        background-color: #460C08 !important;
+    }
+}
+/* Кнопка только в мобильной версии */
+.mobile-start-button {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-start-button {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+
+        width: 220px;
+        height: 58px;
+        margin: 12px auto 25px;
+        padding: 0 20px;
+        box-sizing: border-box;
+
+        background: url("images/knopka2.png") center / 100% 100% no-repeat;
+        border: none;
+        color: #EADCC7 !important;
+
+        font-family: "Tenor Sans", sans-serif;
+        font-size: 13px;
+        letter-spacing: 1px;
+        text-decoration: none !important;
+        white-space: nowrap;
+    }
+
+    .mobile-start-arrow {
+        font-size: 20px;
+        line-height: 1;
+    }
+
+    .mobile-start-button:active {
+        transform: scale(0.97);
+    }
+}
+@media screen and (max-width: 768px) {
+    .mobile-start-button {
+        width: 150px !important;
+        height: 42px !important;
+
+        margin-top: -300px !important;
+        margin-left: 12px !important;
+        margin-right: auto !important;
+        margin-bottom: 240px !important;
+
+        padding: 0 10px !important;
+        gap: 6px !important;
+
+        background-size: 100% 100% !important;
+        font-size: 9px !important;
+    }
+
+    .mobile-start-button .mobile-start-arrow {
+        font-size: 15px !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    .mobile-start-button {
+        position: relative !important;
+        z-index: 10;
+
+        width: 150px !important;
+        height: 42px !important;
+
+        margin-top: -260px !important;
+        margin-left: 12px !important;
+        margin-right: auto !important;
+        margin-bottom: 200px !important;
+
+        background: url("images/knopka2.png")
+                    center / 100% 100% no-repeat !important;
+
+        color: #EADCC7 !important;
+        font-size: 9px !important;
+        text-decoration: none !important;
+    }
+
+    .mobile-start-button span {
+        color: #EADCC7 !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    .mobile-start-button {
+        margin-top: -230px !important;
+        margin-left: 35px !important;
+        margin-right: auto !important;
+        margin-bottom: 170px !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    .mobile-start-button {
+        animation: mobileButtonPulse 1.5s ease-in-out infinite !important;
+        transform-origin: center center;
+        will-change: transform;
+    }
+}
+
+@keyframes mobileButtonPulse {
+    0%, 100% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.08;
+    }
+}
+@media screen and (max-width: 768px) {
+    /* Скрываем старый мобильный маршрут */
+    #route {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-map-legend-item {
+        animation: placePulse 1.8s ease-in-out infinite;
+        transform-origin: center;
+        will-change: transform;
+    }
+
+    /* Немного смещаем начало анимации,
+       чтобы пункты пульсировали по очереди */
+    .mobile-map-legend-item:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .mobile-map-legend-item:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+
+    .mobile-map-legend-item:nth-child(4) {
+        animation-delay: 0.6s;
+    }
+
+    .mobile-map-legend-item:nth-child(5) {
+        animation-delay: 0.8s;
+    }
+
+    .mobile-map-legend-item:nth-child(6) {
+        animation-delay: 1s;
+    }
+
+    .mobile-map-legend-item:nth-child(7) {
+        animation-delay: 1.2s;
+    }
+
+    .mobile-map-legend-item:nth-child(8) {
+        animation-delay: 1.4s;
+    }
+
+    .mobile-map-legend-item:nth-child(9) {
+        animation-delay: 1.6s;
+    }
+}
+
+@keyframes placePulse {
+    0%, 100% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.025;
+    }
+}
+/* Постеры достопримечательностей для мобильной версии */
+
+.mobile-place-poster {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-place-poster {
+        display: block !important;
+        width: 100% !important;
+        max-width: 440px !important;
+        height: auto !important;
+        margin: 20px auto 25px !important;
+        object-fit: contain !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    /* Скрываем старое оформление страницы Кремля */
+    body.kremlin-page .frame-container {
+        display: none !important;
+    }
+
+    /* Показываем готовый мобильный постер */
+    body.kremlin-page .mobile-place-poster {
+        display: block !important;
+        width: 100% !important;
+        max-width: 440px !important;
+        height: auto !important;
+        margin: 0 auto !important;
+    }
+}
+.kremlin-mobile-controls {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+    .kremlin-mobile-controls {
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        width: 100%;
+        padding: 20px 24px 35px;
+        box-sizing: border-box;
+        background: #460C08;
+    }
+
+    /* Узорчатая аудиокнопка */
+    .kremlin-audio-button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        width: 210px;
+        height: 52px;
+        padding: 0 20px;
+        border: none;
+        background: transparent;
+        color: #6A211A;
+        font-family: "Tenor Sans", sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+
+    .kremlin-audio-button img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        z-index: 0;
+    }
+
+    .kremlin-audio-button span {
+        position: relative;
+        z-index: 1;
+    }
+
+    .kremlin-audio-arrow {
+        font-size: 17px;
+    }
+
+    /* Бежевая ссылка назад */
+    .kremlin-back-button {
+        display: inline-block;
+        margin-top: 4px;
+        color: #EADCC7 !important;
+        font-family: "Tenor Sans", sans-serif;
+        font-size: 13px;
+        text-decoration: none !important;
+    }
+
+    .kremlin-back-button:active {
+        opacity: 0.7;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .kremlin-mobile-controls {
+        position: relative !important;
+        display: flex !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        padding-top: 20px !important;
+    }
+
+    .kremlin-audio-button {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: translate(45px, -180px) !important;
+        margin: 0 0 -150px 0 !important;
+        z-index: 20 !important;
+        flex-shrink: 0;
+    }
+
+    .kremlin-back-button {
+        position: relative !important;
+        z-index: 21 !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    .kremlin-audio-button {
+        font-family: "Slovic Demo", serif !important;
+        color: #EADCC7 !important;
+        font-size: 14px !important;
+        letter-spacing: 0.5px;
+    }
+
+    .kremlin-audio-button .kremlin-audio-arrow {
+        display: none !important;
+    }
+
+    .kremlin-audio-button span {
+        color: #EADCC7 !important;
+        font-family: "Slovic Demo", serif !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    .kremlin-audio-button {
+        transform: translate(45px, -140px) !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .kremlin-audio-button,
+    .kremlin-audio-button span {
+        color: #500D0B !important;
+        font-family: "Slovic Demo", serif !important;
+    }
+}
+
+/* Пульсация кнопки аудио на мобильной версии */
+@keyframes kremlinAudioPulse {
+  0%, 100% {
+    transform: translate(45px, -140px) scale(1);
+  }
+  50% {
+    transform: translate(45px, -140px) scale(1.07);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .kremlin-audio-button {
+    animation: kremlinAudioPulse 1.5s ease-in-out infinite !important;
+    transform-origin: center;
+  }
+}
+
+@keyframes audioButtonPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(80, 13, 11, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(80, 13, 11, 0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .kremlin-mobile-controls .kremlin-audio-button {
+    animation: audioButtonPulse 1.4s ease-out infinite !important;
+    animation-play-state: running !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .kremlin-mobile-controls .kremlin-back-button {
+    display: block !important;
+    position: relative !important;
+    margin-top: 18px !important;
+    margin-left: 0 !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    transform: none !important;
+    width: fit-content !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body.kremlin-page .kremlin-mobile-controls a.kremlin-back-button {
+    position: relative !important;
+    display: block !important;
+    top: 20px !important;
+    left: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+    transform: translateY(20px) !important;
+    width: fit-content !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body.kremlin-page .kremlin-mobile-controls .kremlin-back-button {
+    display: block !important;
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 28px 0 0 10px !important;
+    padding: 0 !important;
+    font-size: 9px !important;
+    line-height: 1.3 !important;
+    transform: none !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body.kremlin-page .kremlin-mobile-controls {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    margin-top: 0 !important;
+    padding-left: 12px !important;
+  }
+
+  body.kremlin-page .kremlin-mobile-controls .kremlin-back-button {
+    position: static !important;
+    display: inline-block !important;
+    margin: 0 0 0 4px !important;
+    padding: 0 !important;
+    font-size: 10px !important;
+    line-height: 1.3 !important;
+    transform: none !important;
+    white-space: nowrap !important;
+    color: #EADCC7 !important;
+    text-decoration: none !important;
+  }
+}
+
+/* Мобильная страница Софийского собора */
+@media screen and (max-width: 768px) {
+  body.sofia-page .frame-container {
+    display: none !important;
+  }
+
+  body.sofia-page .mobile-place-poster {
+    display: block !important;
+    width: 100% !important;
+    max-width: 440px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+
+  body.sofia-page .sofia-mobile-controls {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    padding-left: 12px !important;
+  }
+
+  body.sofia-page .sofia-audio-button {
+    position: relative;
+    display: block;
+    width: 200px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    animation: sofiaAudioPulse 1.5s ease-in-out infinite;
+  }
+
+  body.sofia-page .sofia-audio-button img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  body.sofia-page .sofia-audio-button span {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #500D0B;
+    font-family: "Slovic_Demo", serif;
+    font-size: 14px;
+  }
+
+  body.sofia-page .sofia-back-button {
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 10px;
+    color: #EADCC7;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+}
+
+@keyframes sofiaAudioPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(80, 13, 11, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(80, 13, 11, 0);
+  }
+}
+/* Исправление мобильной кнопки аудио на странице Софии */
+
+@media (max-width: 768px) {
+  body.sofia-page .sofia-mobile-controls {
+    background: #500D0B !important;
+    padding: 12px !important;
+    gap: 14px !important;
+  }
+
+  body.sofia-page .sofia-mobile-audio {
+    width: 200px !important;
+    height: 58px !important;
+    max-width: 80% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+  }
+
+  body.sofia-page .sofia-mobile-audio img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: fill !important;
+  }
+
+  body.sofia-page .sofia-mobile-audio span {
+    position: absolute !important;
+    inset: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    color: #500D0B !important;
+    font-family: "Slovic_Demo", serif !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+  }
+
+  body.sofia-page .sofia-mobile-back,
+  body.sofia-page .sofia-mobile-back:visited,
+  body.sofia-page .sofia-mobile-back:hover {
+    color: #EADCC7 !important;
+    font-family: "Tenor Sans", sans-serif !important;
+    font-size: 10px !important;
+    text-decoration: none !important;
+  }
+}
+/* Позиция аудио на мобильном постере Софийского собора */
+
+@media (max-width: 768px) {
+  body.sofia-page .sofia-mobile-poster {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  body.sofia-page .sofia-mobile-controls {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 12px 24px;
+    background: #500D0B;
+  }
+
+  body.sofia-page .sofia-mobile-audio {
+    position: relative;
+    width: 200px;
+    height: 58px;
+    max-width: 80%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    animation: none;
+  }
+
+  body.sofia-page .sofia-mobile-audio img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  body.sofia-page .sofia-mobile-audio span {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #500D0B;
+    font-family: "Slovic_Demo", serif;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  body.sofia-page .sofia-mobile-back,
+  body.sofia-page .sofia-mobile-back:visited {
+    color: #EADCC7;
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 10px;
+    text-decoration: none;
+  }
+}
+/* Поднимаем кнопку и блок управления Софийским собором */
+
+@media (max-width: 768px) {
+  body.sofia-page .sofia-mobile-controls {
+    margin-top: -35px !important;
+    padding-top: 12px !important;
+    position: relative;
+    z-index: 2;
+  }
+
+  body.sofia-page .sofia-mobile-audio {
+    margin-top: 0 !important;
+  }
+}
+/* Новый цвет фона */
+body.sofia-page,
+body.sofia-page .sofia-mobile,
+body.sofia-page .sofia-mobile-controls {
+  background-color: #360B05 !important;
+}
+
+@media (max-width: 768px) {
+  body.sofia-page {
+    background-color: #360B05 !important;
+  }
+}
+/* ===== ТЫСЯЧЕЛЕТИЕ РОССИИ — МОБИЛЬНАЯ ВЕРСИЯ ===== */
+
+.tysacheletie-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body.tysacheletie-page {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100vh;
+    background-color: #360B05 !important;
+    overflow-x: hidden;
+  }
+
+  body.tysacheletie-page .tysacheletie-desktop {
+    display: none !important;
+  }
+
+  body.tysacheletie-page .tysacheletie-mobile {
+    display: block !important;
+    width: 100%;
+    max-width: 440px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0 0 24px;
+    box-sizing: border-box;
+    background-color: #360B05 !important;
+  }
+
+  body.tysacheletie-page .tysacheletie-mobile-poster {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    object-fit: contain;
+  }
+
+  body.tysacheletie-page .tysacheletie-mobile-controls {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: -35px;
+    padding: 12px;
+    background-color: #360B05 !important;
+  }
+
+  body.tysacheletie-page .tysacheletie-mobile-audio {
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 58px;
+    max-width: 80%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+  }
+
+  body.tysacheletie-page .tysacheletie-mobile-audio img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  body.tysacheletie-page .tysacheletie-mobile-audio span {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #500D0B;
+    font-family: "Slovic_Demo", serif;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+  }
+
+  body.tysacheletie-page .tysacheletie-mobile-back,
+  body.tysacheletie-page .tysacheletie-mobile-back:visited {
+    display: inline-block;
+    color: #EADCC7 !important;
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 10px;
+    text-decoration: none;
+  }
+}
+body.tysacheletie-page {
+  background-color: #43110A !important;
+}
+
+body.tysacheletie-page .tysacheletie-mobile,
+body.tysacheletie-page .tysacheletie-mobile-controls {
+  background-color: #43110A !important;
+}
+/* ===== ГРАНОВИТАЯ ПАЛАТА — МОБИЛЬНАЯ ВЕРСИЯ ===== */
+
+.granovitaya-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body.granovitaya-page {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100vh;
+    background-color: #440B06 !important;
+    overflow-x: hidden;
+  }
+
+  body.granovitaya-page .granovitaya-desktop {
+    display: none !important;
+  }
+
+  body.granovitaya-page .granovitaya-mobile {
+    display: block !important;
+    width: 100%;
+    max-width: 440px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0 0 24px;
+    box-sizing: border-box;
+    background-color: #440B06 !important;
+  }
+
+  body.granovitaya-page .granovitaya-mobile-poster {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    object-fit: contain;
+  }
+
+  body.granovitaya-page .granovitaya-mobile-controls {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: -35px;
+    padding: 12px;
+    background-color: #440B06 !important;
+  }
+
+  body.granovitaya-page .granovitaya-mobile-audio {
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 58px;
+    max-width: 80%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+  }
+
+  body.granovitaya-page .granovitaya-mobile-audio img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  body.granovitaya-page .granovitaya-mobile-audio span {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #500D0B;
+    font-family: "Slovic_Demo", serif;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+  }
+
+  body.granovitaya-page .granovitaya-mobile-back,
+  body.granovitaya-page .granovitaya-mobile-back:visited {
+    display: inline-block;
+    color: #EADCC7 !important;
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 10px;
+    text-decoration: none;
+  }
+}
+/* ===== ВИТОСЛАВЛИЦЫ — МОБИЛЬНАЯ ВЕРСИЯ ===== */
+
+.vitoslavlitsy-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body.vitoslavlitsy-page {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100vh;
+    background-color: #44110D !important;
+    overflow-x: hidden;
+  }
+
+  body.vitoslavlitsy-page .vitoslavlitsy-desktop {
+    display: none !important;
+  }
+
+  body.vitoslavlitsy-page .vitoslavlitsy-mobile {
+    display: block !important;
+    width: 100%;
+    max-width: 440px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0 0 24px;
+    box-sizing: border-box;
+    background-color: #44110D !important;
+  }
+
+  body.vitoslavlitsy-page .vitoslavlitsy-mobile-poster {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    object-fit: contain;
+  }
+
+  body.vitoslavlitsy-page .vitoslavlitsy-mobile-controls {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: -35px;
+    padding: 12px;
+    background-color: #44110D !important;
+  }
+
+  body.vitoslavlitsy-page .vitoslavlitsy-mobile-audio {
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 58px;
+    max-width: 80%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+  }
+
+  body.vitoslavlitsy-page .vitoslavlitsy-mobile-audio img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  body.vitoslavlitsy-page .vitoslavlitsy-mobile-audio span {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #500D0B;
+    font-family: "Slovic_Demo", serif;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+  }
+
+  body.vitoslavlitsy-page .vitoslavlitsy-mobile-back,
+  body.vitoslavlitsy-page .vitoslavlitsy-mobile-back:visited {
+    display: inline-block;
+    color: #EADCC7 !important;
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 10px;
+    text-decoration: none;
+  }
+}
+/* ===== СВЯТО-ЮРЬЕВ МОНАСТЫРЬ — МОБИЛЬНАЯ ВЕРСИЯ ===== */
+
+.monastyr-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body.monastyr-page {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100vh;
+    background-color: #3E0F09 !important;
+    overflow-x: hidden;
+  }
+
+  body.monastyr-page .monastyr-desktop {
+    display: none !important;
+  }
+
+  body.monastyr-page .monastyr-mobile {
+    display: block !important;
+    width: 100%;
+    max-width: 440px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0 0 24px;
+    box-sizing: border-box;
+    background-color: #3E0F09 !important;
+  }
+
+  body.monastyr-page .monastyr-mobile-poster {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    object-fit: contain;
+  }
+
+  body.monastyr-page .monastyr-mobile-controls {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: -35px;
+    padding: 12px;
+    background-color: #3E0F09 !important;
+  }
+
+  body.monastyr-page .monastyr-mobile-audio {
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 58px;
+    max-width: 80%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+  }
+
+  body.monastyr-page .monastyr-mobile-audio img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  body.monastyr-page .monastyr-mobile-audio span {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #500D0B;
+    font-family: "Slovic_Demo", serif;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+  }
+
+  body.monastyr-page .monastyr-mobile-back,
+  body.monastyr-page .monastyr-mobile-back:visited {
+    display: inline-block;
+    color: #EADCC7 !important;
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 10px;
+    text-decoration: none;
+  }
+}
+/* ===== ЯРОСЛАВОВО ДВОРИЩЕ — МОБИЛЬНАЯ ВЕРСИЯ ===== */
+
+.yaroslavovo-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body.yaroslavovo-page {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100vh;
+    background-color: #400A07 !important;
+    overflow-x: hidden;
+  }
+
+  body.yaroslavovo-page .yaroslavovo-desktop {
+    display: none !important;
+  }
+
+  body.yaroslavovo-page .yaroslavovo-mobile {
+    display: block !important;
+    width: 100%;
+    max-width: 440px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0 0 24px;
+    box-sizing: border-box;
+    background-color: #400A07 !important;
+  }
+
+  body.yaroslavovo-page .yaroslavovo-mobile-poster {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    object-fit: contain;
+  }
+
+  body.yaroslavovo-page .yaroslavovo-mobile-controls {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: -35px;
+    padding: 12px;
+    background-color: #400A07 !important;
+  }
+
+  body.yaroslavovo-page .yaroslavovo-mobile-audio {
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 58px;
+    max-width: 80%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+  }
+
+  body.yaroslavovo-page .yaroslavovo-mobile-audio img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  body.yaroslavovo-page .yaroslavovo-mobile-audio span {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #500D0B;
+    font-family: "Slovic_Demo", serif;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+  }
+
+  body.yaroslavovo-page .yaroslavovo-mobile-back,
+  body.yaroslavovo-page .yaroslavovo-mobile-back:visited {
+    display: inline-block;
+    color: #EADCC7 !important;
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 10px;
+    text-decoration: none;
+  }
+}
+/* ===== НЕРЕДИЦА — МОБИЛЬНАЯ ВЕРСИЯ ===== */
+
+.nereditsa-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body.nereditsa-page {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100vh;
+    background-color: #3D0A04 !important;
+    overflow-x: hidden;
+  }
+
+  body.nereditsa-page .nereditsa-desktop {
+    display: none !important;
+  }
+
+  body.nereditsa-page .nereditsa-mobile {
+    display: block !important;
+    width: 100%;
+    max-width: 440px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0 0 24px;
+    box-sizing: border-box;
+    background-color: #3D0A04 !important;
+  }
+
+  body.nereditsa-page .nereditsa-mobile-poster {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    object-fit: contain;
+  }
+
+  body.nereditsa-page .nereditsa-mobile-controls {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: -35px;
+    padding: 12px;
+    background-color: #3D0A04 !important;
+  }
+
+  body.nereditsa-page .nereditsa-mobile-audio {
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 58px;
+    max-width: 80%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+  }
+
+  body.nereditsa-page .nereditsa-mobile-audio img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  body.nereditsa-page .nereditsa-mobile-audio span {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #500D0B;
+    font-family: "Slovic_Demo", serif;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+  }
+
+  body.nereditsa-page .nereditsa-mobile-back,
+  body.nereditsa-page .nereditsa-mobile-back:visited {
+    display: inline-block;
+    color: #EADCC7 !important;
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 10px;
+    text-decoration: none;
+  }
+}
+/* ===== РЮРИКОВО ГОРОДИЩЕ — МОБИЛЬНАЯ ВЕРСИЯ ===== */
+
+.ryurikovo-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body.ryurikovo-page {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100vh;
+    background-color: #3D0A04 !important;
+    overflow-x: hidden;
+  }
+
+  body.ryurikovo-page .ryurikovo-desktop {
+    display: none !important;
+  }
+
+  body.ryurikovo-page .ryurikovo-mobile {
+    display: block !important;
+    width: 100%;
+    max-width: 440px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0 0 24px;
+    box-sizing: border-box;
+    background-color: #3D0A04 !important;
+  }
+
+  body.ryurikovo-page .ryurikovo-mobile-poster {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    object-fit: contain;
+  }
+
+  body.ryurikovo-page .ryurikovo-mobile-controls {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: -35px;
+    padding: 12px;
+    background-color: #3D0A04 !important;
+  }
+
+  body.ryurikovo-page .ryurikovo-mobile-audio {
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 58px;
+    max-width: 80%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+  }
+
+  body.ryurikovo-page .ryurikovo-mobile-audio img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  body.ryurikovo-page .ryurikovo-mobile-audio span {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #500D0B;
+    font-family: "Slovic_Demo", serif;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+  }
+
+  body.ryurikovo-page .ryurikovo-mobile-back,
+  body.ryurikovo-page .ryurikovo-mobile-back:visited {
+    display: inline-block;
+    color: #EADCC7 !important;
+    font-family: "Tenor Sans", sans-serif;
+    font-size: 10px;
+    text-decoration: none;
+  }
+}
+/* Рюриково городище — положение кнопки и ссылки */
+
+@media (max-width: 768px) {
+  body.ryurikovo-page .ryurikovo-mobile-controls {
+    margin-top: -35px !important;
+    padding: 12px 16px 24px !important;
+    gap: 14px !important;
+    align-items: flex-start !important;
+    background-color: #3D0A04 !important;
+  }
+
+  body.ryurikovo-page .ryurikovo-mobile-audio {
+    width: 250px !important;
+    height: 68px !important;
+    max-width: 85% !important;
+  }
+
+  body.ryurikovo-page .ryurikovo-mobile-back,
+  body.ryurikovo-page .ryurikovo-mobile-back:visited {
+    color: #EADCC7 !important;
+    text-decoration: none !important;
+  }
+}
+/* Принудительное изменение блока управления Рюрикова городища */
+
+@media screen and (max-width: 768px) {
+  body.frame-page.ryurikovo-page main.ryurikovo-mobile
+  .ryurikovo-mobile-controls {
+    margin-top: -50px !important;
+    padding-top: 0 !important;
+    transform: translateY(-15px) !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+
+  body.frame-page.ryurikovo-page
+  .ryurikovo-mobile-controls
+  .ryurikovo-mobile-audio {
+    width: 250px !important;
+    height: 68px !important;
+    margin: 0 !important;
+  }
+
+  body.frame-page.ryurikovo-page
+  .ryurikovo-mobile-controls
+  .ryurikovo-mobile-back {
+    color: #EADCC7 !important;
+    text-decoration: none !important;
+  }
+}
+/* Фон Рюрикова городища */
+body.ryurikovo-page,
+body.ryurikovo-page .ryurikovo-mobile,
+body.ryurikovo-page .ryurikovo-mobile-controls {
+  background-color: #450B05 !important;
+}
+/* Скрываем мобильные макеты только на компьютере */
+@media screen and (min-width: 769px) {
+  body:not(.frame-page) .mobile-hero,
+  body:not(.frame-page) .mobile-about,
+  body:not(.frame-page) .mobile-poster,
+  body:not(.frame-page) .mobile-section {
+    display: none !important;
+  }
+}
+/* Скрываем мобильную версию только на компьютере */
+@media screen and (min-width: 769px) {
+  body:not(.frame-page) .mobile-version,
+  body:not(.frame-page) .mobile-route {
+    display: none !important;
+  }
+}
+
+/* Показываем мобильную версию на телефонах */
+@media screen and (max-width: 768px) {
+  body:not(.frame-page) .mobile-version {
+    display: block;
+  }
+}
+/* Софийский собор: мобильная версия только на телефонах */
+
+@media screen and (min-width: 769px) {
+  body.sofia-page .sofia-mobile {
+    display: none !important;
+  }
+
+  body.sofia-page .sofia-desktop {
+    display: block !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body.sofia-page .sofia-desktop {
+    display: none !important;
+  }
+
+  body.sofia-page .sofia-mobile {
+    display: block !important;
+  }
+}
+@media screen and (min-width: 769px) {
+  body.granovitaya-page .frame-image {
+    transform: translateY(-25px);
+  }
+}

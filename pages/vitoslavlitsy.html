@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Витославлицы</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="frame-page vitoslavlitsy-page">
+
+  <!-- Десктопная версия -->
+  <main class="frame-container vitoslavlitsy-desktop">
+    <a href="../index.html#route" class="back-to-route">
+      ← НАЗАД К МАРШРУТУ
+    </a>
+
+    <img
+      class="frame-image"
+      src="../images/vitoslavlitsy.png"
+      alt="Музей деревянного зодчества Витославлицы"
+    >
+
+    <button class="audio-button" id="audioButton" type="button"
+      aria-label="Слушать аудио">
+      <img src="../images/knopka.png" alt="">
+    </button>
+  </main>
+
+  <!-- Мобильная версия -->
+  <main class="vitoslavlitsy-mobile">
+    <img
+      class="vitoslavlitsy-mobile-poster"
+      src="../images/vitoslavlitsy-mob.png"
+      alt="Витославлицы — музей деревянного зодчества"
+    >
+
+    <div class="vitoslavlitsy-mobile-controls">
+      <button
+        class="vitoslavlitsy-mobile-audio"
+        id="mobileAudioButton"
+        type="button"
+      >
+        <img src="../images/knopka.png" alt="">
+        <span id="mobileAudioLabel">СЛУШАТЬ АУДИО</span>
+      </button>
+
+      <a href="../index.html#route" class="vitoslavlitsy-mobile-back">
+        ← НАЗАД К МАРШРУТУ
+      </a>
+    </div>
+  </main>
+
+  <!-- Общий аудиофайл -->
+  <audio id="placeAudio" preload="none">
+    <source src="../audio/vitoslavlitsy.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const placeAudio = document.getElementById("placeAudio");
+    const audioButton = document.getElementById("audioButton");
+    const mobileAudioButton =
+      document.getElementById("mobileAudioButton");
+    const mobileAudioLabel =
+      document.getElementById("mobileAudioLabel");
+
+    async function toggleAudio() {
+      if (placeAudio.paused) {
+        try {
+          await placeAudio.play();
+        } catch (error) {
+          console.error("Не удалось воспроизвести аудио:", error);
+        }
+      } else {
+        placeAudio.pause();
+      }
+    }
+
+    audioButton.addEventListener("click", toggleAudio);
+    mobileAudioButton.addEventListener("click", toggleAudio);
+
+    function updateAudioButtons() {
+      const playing = !placeAudio.paused;
+
+      audioButton.classList.toggle("is-playing", playing);
+      mobileAudioButton.classList.toggle("is-playing", playing);
+
+      mobileAudioLabel.textContent =
+        playing ? "ПАУЗА" : "СЛУШАТЬ АУДИО";
+    }
+
+    placeAudio.addEventListener("play", updateAudioButtons);
+    placeAudio.addEventListener("pause", updateAudioButtons);
+    placeAudio.addEventListener("ended", updateAudioButtons);
+  </script>
+
+</body>
+</html>
